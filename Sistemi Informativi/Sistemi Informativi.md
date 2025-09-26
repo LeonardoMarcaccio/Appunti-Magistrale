@@ -365,3 +365,426 @@ Documentazione Tecnica del Prodotto** e dei relativi **Processi Produttivi**.
 
 **E-procurement**: permettono la **realizzazione di Mercati Elettronici Interaziendali** in cui le condizioni quadro e i fornitori sono definite dagli uffici acquisti, mentre sono i reparti utenti a seguire gli acquisti veri e propri abbattendo così costi e tempi.
 
+## CRM
+
+Il termine **CRM** (***Customer Relationship Management***) indica il **processo integrato** e **strutturato** per la **gestione della relazione con la clientela**, il cui scopo è **costruire relazioni personalizzate** di lungo periodo, capaci di **aumentare la soddisfazione del cliente** e di **aumentare il valore dell’impresa** per il **Cliente**.
+
+Il **Cliente** diventa il **focus centrale della strategia commerciale**.
+
+Il ruolo dei **Sistemi CRM** varia a secondo dei settori di attività ed è massimo nelle aziende con **relazioni frequenti e continuate nel tempo** con una clientela numerosa, geograficamente distribuita, che interagisce attraverso diversi canali.
+
+Esistono tre **Moduli principali** in un **Sistema CRM**:
+- **CRM Operativo**: Informatizza i **Canali** attraverso cui avvengono i **contatti con il cliente**
+- **CRM Analitico**: Informatizza l’**Analisi della Clientela** al fine di definire le **Politiche di Promozione e di Contatto**.
+- **CRM Direzionale**: Permette al **Management** di **valutare la Performance dell’Azienda** verso il cliente.
+
+Il **CRM Analitico** supporta il **Settore Commerciale e Marketing** nella **pianificazione** delle proprie **attività**, mentre il **CRM Direzionale** supporta la **Dirigenza** nel valutare l’**Efficienza del Settore Marketing e Commerciale**.
+
+## Il Paradigma CRM
+
+Le caratteristiche che denotano un sistema CRM possono essere così riassunte:
+- **Multicanalità**: Il **cliente** sceglie di volta in volta il **Canale di Contatto più conveniente** ed il **Servizio** deve essere **erogabile 24h**.
+- **Completezza e Unicità dei Dati** su prodotti e clienti: Per rendere possibile la **Multicanalità** le **Informazioni sul Cliente** devono essere **condivise dai diversi Sistemi di Contatto** che utilizzeranno una **DB comune**.
+- **Catene di Servizio**: Le **richieste** sottoposte ai **Front-End** generano una serie di **Attività** complesse sui sistemi di **Back-End**.
+
+L’**Efficienza del Sistema CRM** dipende quindi dalla **capacità di integrare i Servizi del SI**.
+
+## I Canali CRM: Presenza
+
+Il **CRM** dà **supporto al Venditore** nel ciclo di **individuazione del Cliente**, di **Contatto**, di **Trattativa** e di **Ordinazione** vera e propria.
+
+Dato che l’**Automazione è indirizzata al Venditore** si parla di applicazioni ***Sales Force Automation*** (**SFA**).
+
+## I Canali CRM: Voce e corrispondenza
+
+Il **Cliente** interagisce via telefono con una **Rete di Operatori** assistiti dal **Sistema CRM**, e di **Sistemi Automatici Integrati** con gli apparati telefonici (**Call-Center**).
+
+La **Componente Informatica**:
+- Permette di **smistare le chiamate** in base al **Servizio richiesto**.
+- Fornisce **Risposte** e **Servizi** in maniera **Automatica** e con modalità **Self-Service**.
+- Rende **trasparente la Multilocalizzazione** dei **Call-Center**.
+- Supporta gli **Operatori**.
+
+Nel **Canale Corrispondenza** il **Cliente** interagisce via **e-mail** con l’**Azienda** in cui gli **Operatori** smistano le lettere in entrata.
+
+L’azienda può inoltre utilizzare **Sistemi Automatici** di invio rendendo possibili **Campagne di Marketing** o **Servizi Informazioni** altrimenti irrealizzabili.
+
+## I Canali CRM: Web
+
+Il **Canale web** (detto di **Commercio Elettronico**) è diventato il **principale Canale CRM**:
+- Vendita self-service 24 ore su 24.
+- Possibilità di personalizzazione per singolo utente.
+- Evidenza al cliente dello stato degli ordini.
+- Registrazione del percorso di navigazione del cliente (click stream analysis).
+
+I **Servizi Web** si classificano in:
+- ***Business-to-Customer*** (**B2C**): **Punti di Accesso** per gli **Utenti Finali** fortemente orientati all’**acquisto**.
+- ***Business-to-Business*** (**B2B**): **Punti di Accesso** per le **Aziende Partner** maggiormente orientati ai **Servizi**.
+
+---
+
+# Pianificazione dei SI
+
+## Legge di Martec
+
+Nella maggior parte dei **Processi Innovativi** sono le **Persone** e i **Processi** a **frenare l’Innovazione** a causa dell’**avversione all’Innovazione** e alla **legge di Martec**
+
+![alt text](image-12.png)
+
+Questo fenomeno può determinare un **senso di Inadeguatezza** con conseguente **avversione all’Innovazione Tecnologica**.
+
+Questo richiede alle **Aziende** di:
+- **Prioritizzare le innovazioni** da adottare.
+- Diventare più **agili** e **abituarsi al cambiamento** continuo.
+- Adottare **Cambiamenti Rivoluzionari**, come la **Revisione di Sistemi, processi o strutture** per allinearsi alla **curva esponenziale dei progressi tecnologici**.
+
+## La Law of Accelerating Returns di Ray Kurzweil (2001)
+
+Un **Concetto** per descrivere come il **Progresso Tecnologico** tenda ad **accelerare in modo Esponenziale**, anziché lineare, nel tempo.
+
+Questo accade perché ogni **Innovazione Tecnologica** fornisce gli strumenti per **sviluppare ulteriori innovazioni** a un ritmo sempre più rapido.
+
+## l ciclo di Deming
+
+Sintetizza la **Logica** secondo la quale **gestire il Ciclo di Innovazione**.
+
+![alt text](image-13.png)
+
+Il termine “**Ciclo**” vuole enfatizzare la **ripetitività delle Fasi** che si devono **continuamente ripetere durante tutta la vita dell’Azienda**.
+
+L’adozione di un **Ciclo di Pianificazione e Controllo** è il primo passo per mantenere attuale il **Sistema Informativo** minimizzando i **rischi di Incoerenza** e i **Costi di Realizzazione**.
+
+## Pianificazione
+
+Nella **Fase di Pianificazione** si collocano:
+
+- La **Formalizzazione delle Strategie** in termini di **Servizio** e di **utilizzo delle Tecnologie**, che individuano gli **Obiettivi da conseguire** e i principali **Terreni di Intervento**;
+- La **Scelta delle Priorità** nell’attuazione dei vari **Interventi di Automazione**;
+- La **Validazione dei Progetti** da attivare, che si baserà sulle **priorità evidenziate** e terrà conto dei **Vincoli di Bilancio** e delle **Relazioni esistenti tra i vari Progetti**;
+- La **Definizione degli Impegni e delle Risorse necessarie**, sia per i **Progetti**,
+sia per le **Attività Concorrenti di Conduzione e Manutenzione dei Sistemi in
+esercizio**;
+- La **Stesura del Documento di Piano** e la correlata **Definizione del Budget e
+delle Responsabilità**, con l’approvazione da parte dei vertici.
+
+## Realizzazione
+
+Nella **Fase di Realizzazione** si collocano:
+
+- L’**Elaborazione di Studi di Fattibilità** per tutti i **Progetti** che al momento della pianificazione mancano ancora del livello di approfondimento necessario alla **Decisione Finale sull’Investimento e all’Avvio Operativo**;
+- La **Definizione di Progetti Esecutivi e di Piani Operativi** per i progetti previsti e per le **Attività di Conduzione, Manutenzione ed Evoluzione dei Sistemi**;
+- L’**Acquisizione di Prodotti e Servizi dal Mercato**, con la **gestione delle Procedure**;
+- La **Realizzazione dei Progetti**;
+- La **Conduzione Operativa dei Sistemi**, con l’**Erogazione dei Servizi Informativi** previsti, insieme alla correlata **Attività di Manutenzione**;
+
+## Verifica
+
+Nella **Fase di Verifica** si collocano:
+
+- La **Gestione dei Progetti nelle loro varie Componenti** (attività, risorse, ecc.);
+- La **Raccolta di Informazioni sullo Stato dei Processi di Servizio**, con **Attività di Raccolta e Osservazione** di misure ed eventi capaci di **evidenziare** e **quantificare** la **situazione di Efficacia ed Efficienza dei Servizi e dei Processi** per la loro erogazione;
+- La **Diagnosi di Servizi e Processi** che, sulla base delle **Informazioni raccolte**,
+evidenzia i **problemi** identificandone le **cause** indicando le **Direzioni di Intervento** per il cambiamento;
+- La **Raccolta di Informazioni sullo Stato dei Sistemi Informativi Automatizzati** in termini di **Patrimonio Tecnologico**, **Patrimonio Informativo**, **Stato delle DB**, **Patrimonio Applicativo**, ecc.
+- La **Diagnosi della Risorsa Informazione**, in primo luogo come **Livello di Qualità delle
+Basi Informative** presenti, soprattutto in termini di **Correttezza**, **Completezza** e
+**Disponibilità delle Informazioni**. Questa **Diagnosi** si può sviluppare in **maniera Integrata** con la **Diagnosi dei Processi**, per le informazioni di pertinenza di specifici processi o aree tematiche, o in **Maniera Indipendente**, considerando la **Risorsa Informazione** come risorsa a disposizione di una pluralità di processi;
+- La **Diagnosi dei Sistemi Informatici**, in termini **Funzionali** e **Organizzativi**, **Architetturali** e **Tecnologici**, o **Economici**.
+
+## Intervento
+
+Nella **Fase di Intervento** si collocano:
+- L’**Elaborazione degli Interventi di Reingegnerizzazione dei Processi di Servizio**, definendo in particolare i **Requisiti di Fondo** per lo sviluppo e la **Revisione dei Sistemi Applicativi**;
+- L’**Individuazione di Iniziative di Reingegnerizzazione dei Sistemi Informatici** che si concretizzano in **Programmi di Adeguamento** delle **Infrastrutture Informatiche**;
+
+## Definizione degli Obiettivi
+
+Per assicurare il **raggiungimento degli Obiettivi Proposti** è necessario che questi vengano **Individuati** e **Formalizzati** in modo da stabilire **Responsabilità**, **Tempi** e **Priorità**.
+
+A tale scopo ogni azienda redige il **Piano di Informatizzazione** che deve essere valutato e approvato ai **Livelli Decisionali elevati** al fine di assumere la **corretta rilevanza**.
+
+**Piano Strategico**:
+- Copre normalmente dai 3 ai 5 anni.
+- È necessario per dare **Unitarietà alle specifiche Iniziative** evitando di costruire **Sistemi Frammentati**, **Incoerenti** e **Tecnologicamente Incompatibili**.
+- Contiene:
+  - **Obiettivi Strategici dell’Informatizzazione**.
+  - **Architetture Tecnologiche** e **Applicative** come quadro di riferimento complessivo.
+  - **Progetti di grande rilievo** che richiedono **elevati Tempi di Realizzazione e Risorse**.
+
+**Piano operativo**:
+- Ha validità annuale
+- Definisce in maniera dettagliata gli **Interventi Previsti** dal piano triennale per l’**Esercizio in corso**
+
+Le **Correzioni** agli **Obiettivi Raggiungibili** nei due orizzonti temporali definiti da **Piano Strategico** e **Operativo** deve essere valutata continuamente aggiungendo a ogni **Piano Operativo** degli **Elementi Correttivi** che incidono sul **Piano Strategico**.
+
+E anche producendo annualmente un **Piano Strategico a Scorrimento** in cui vengono focalizzati con maggior dettaglio **Impegni** e **Attività** relativi al **primo Esercizio**.
+
+## Top Down VS Bottom Up
+
+***Top Down***:
+
+- Partendo dagli **Obiettivi Strategici dell’Organizzazione** si definiscono le **Caratteristiche Generali del Sistema Informativo**, le **Aree di Intervento** e gli specifici **Progetti per Realizzarlo**, verificandone la **Coerenza con le Esigenze espresse** dagli uffici
+- Maggiormente **Innovativo** e **Discontinuo**.
+- Permette di **Identificare** e **Pianificare Soluzioni** che rispondono a necessità di **Mutamenti Radicali**.
+- Causa maggiori **Tensioni** e **Rischi Organizzativi**.
+
+***Bottom Up***:
+
+- Partendo dalle **Indicazioni delle diverse Unità Organizzative**, che successivamente vengono **Integrate** e **Razionalizzate**, definendo contemporaneamente le **Priorità all’interno del Budget Complessivo**.
+- Maggiormente **Conservativo**
+- Difficilmente riesce a produrre ipotesi di **Innovazione Radicale**, mirando sostanzialmente al **Miglioramento dell’Esistente**.
+- Presenta **scarsi Rischi Realizzativi**.
+
+Nella pratica si utilizzano normalmente approcci che realizzano un compromesso tra le due soluzioni teoriche estreme.
+
+## Il Percorso di Adozione nei Sistemi Informativi
+
+Il **Percorso di Digitalizzazione** è **Incrementale** e raramente permette di saltare dei passaggi.
+E’ rischioso, costoso e inutile adottare soluzioni avanzate senza avere completamente sfruttato quelle semplici:
+- I manager non sono pronti o non hanno il mindset giusto
+- I dati non sono pronti o non sono di qualità sufficiente
+- I processi delle aziende non sono pronte o non sono definiti in modo da appoggiarsi ai dati e di reagire a essi.
+
+## Creare Aziende Data-Driven
+
+Il termine **Aziende Data-Driven** si riferisce ad **Aziende** in cui le **Decisioni** e i **Processi** sono **supportate dai Dati**.
+- Le **Decisioni** si basano su **Conoscenze Quantitative** piuttosto che qualitative
+- I **Processi** e le **Conoscenze** sono una **Risorsa dell'Azienda** e **non vanno persi** se i manager cambiano.
+
+Quello di **Digitalizzazione** è un percorso che coinvolge **tre dimensioni principali**.
+
+- Deve **risolvere un Problema** e **apportare Valore**.
+- Deve essere **realizzabile** in un **Intervallo di Tempo Limitato**.
+- I **Costi** devono essere **Economicamente Correlati agli Utili**.
+
+![alt text](image-14.png)
+
+## Il Business Process Reengineering
+
+Il **BPR**, o ***Business Process Reenginering***, nasce come completo **ripensamento** e radicale **ridisegno** dei **fondamentali Processi di un’Organizzazione** alla luce delle **Potenzialità offerte dai nuovi Strumenti Informatici**.
+
+L’accento è sulla **Discontinuità**, sul **Salto nelle Prestazioni**, sulla **completa assenza di Vincoli di Riprogettazione**.
+
+Il **BPR** è la **completa Revisione dei Processi Aziendali** al fine di **massimizzarne il Valore** derivante dalle singole componenti, attraverso **Interventi sia di Riduzione dei Costi sia di Massimizzazione dell’Efficacia**.
+
+## I Processi Aziendali
+
+- **Processo**: Insieme delle **Attività tra loro Interrelate**, finalizzate alla
+realizzazione di un **Risultato Definito e Misurabile** che contribuisce al raggiungimento della **Missione dell’Azienda**.
+- **Cliente**: La **Persona** o **Gruppo** che richiede o usa un **Prodotto** o **Servizio**
+realizzato tramite il **Processo**, il **Cliente** può essere **Interno** o **Esterno** all’azienda.
+
+Il **Processo** e la sua **Manutenzione** diventano gli **Elementi Centrali** del **Ciclo di Innovazione** dei **SI**.
+
+Primo compito del **Progettista** è quello di **Descrivere** e **Classificare** i **Processi**, particolare rilevanza hanno le **Classificazioni Normative**, ossia quelle che descrivono la **Struttura dei Processi** come dovrebbe essere o effettivamente è nelle migliori aziende del settore.
+
+## Tipi di Cambiamento
+
+- ***Streamlining***: Ricerca il **miglioramento delle prestazioni** modificando il **Processo Attuale** (Pinaificazione al Presente).
+- ***Business Process Reengineering***: Ricerca un **Cambiamento Radicale del Processo Attuale** (Pianificare il Futuro a Parità di Business).
+- ***Enterprise Transformation***: Ricerca una **Riconfigurazione del Business** (Pianificare
+il Business).
+
+## Fasi del BPR
+
+- Identificazione dei **Processi** da reingegnerizzare:
+  - Descrivere i Processi
+  - Identificazione del Breakthrough
+  - Analisi dei Tempi di Ciclo
+  - Analisi della Creazione del Valore
+- Definizione delle **Priorità di Intervento** sulla base del loro impatto (***Analisi di Pareto***)
+- **Reingegnerizzione dei Processi** per rimuovere le **Barriere alla Performance**
+  - Implementazione del Cambiamento
+  - Istituzionalizzazione delle Misure per il Miglioramento Continuo.
+
+## Descrivere i Processi
+
+La **Scomposizione dei Processi** dettaglia i processi per successivi livelli di approfondimento:
+
+- **Macroprocesso**: Ne è un esempio la **Catena del Valore di Porter**. E' utile soprattutto nelle fasi iniziali per **strutturare l’Analisi** e per **individuare l’Area di Intervento**.
+- **Processo**: Illustra a un livello ragionevolmente dettagliato le **Operazioni svolte da
+un’**azienda****.
+- **Fase**: Una **Fase** è una **Tappa di un Processo** e ha lo scopo di **descrivere** il modo in cui **un Processo è Implementato**.
+- **Attività**: è il livello adottato nella **Fase di Studio dei Processi**. Sono determinate **scomponendo ulteriormente le Fasi secondo una Logica Sequenziale**.
+
+## Variabili di Progettazione
+
+Le **Variabili di Progettazione** dei processi sono:
+
+- **Flusso delle Attività**:
+  - **Sequenza di Attività** attraverso cui il **Processo** è svolto.
+  - Determina la **durata** e **incide sul Livello di Servizio** in base alle sua flessibilità.
+  - Assieme alle **Risorse Umane** e al **Livello della Tecnologia** determina la **Qualità dell’Output**.
+
+- **Organizzazione del Processo**:
+  - Sia dal punto di vista della **Suddivisione Operativa del Lavoro**, sia della **Struttura di Coordinamento e Controllo Aziendale**.
+  - Determina il **Livello di Accorpamento delle Attività**.
+  - Il **Legame** tra la **Struttura Aziendale** e i **Processi** può essere modellata mediante diagrammi ***Linear Responsability Charting***(**LRC**).
+
+- **Competenze delle Risorse Umane**:
+  - La cui **Adeguatezza** è **condizione fondamentale** per la **Trasformazione** a seguito dell’**Innovazione Tecnologica**.
+
+- **Sistema di Misurazione e controllo delle prestazioni**:
+  - Necessario per **Governare il Processo** e per **valutare gli Attori Aziendali** che lo eseguono.
+  - Si ottiene realizzando sistemi di ***Key Performance Indicator*** (**KPI**) o di **Balanced Scorecard**.
+
+## Linear Responsability Charting
+
+Determina una **Visione Tabellare della Responsabilità Organizzativa** che integra quella dell’organigramma che non specifica il ruolo delle varie strutture nel processo considerato.
+
+Si ottiene **incrociando le Attività del Processo con le Divisioni**.
+
+Il **Ruolo** è indicato dalle **Etichette** inserite nelle celle della griglia risultante:
+- D = decide, autorizza, ratifica
+- E = esegue
+- A = partecipa a tempo parziale, fornisce assistenza operativa e supporto
+- I = è sistematicamente informato
+
+## Le Risorse Umane
+
+Le **Risorse Umane** determinano la **differenza tra il Risultato Effettivo e il Massimo Teoricamente possibile** da una **Configurazione del Processo**.
+
+Le **Tecnologie Innovative** necessitano di **Figure Professionali** che non esistono in azienda e devono essere acquisite dal mercato o create internamente.
+
+Il **Reperimento** può essere **costoso** e **complesso** perché si manifesta per tutte le aziende contemporaneamente.
+
+## Key Performance Indicator
+
+Per verificare l’**Efficacia del Processo** è necessario **misurare quantitativamente** come questo soddisfa i **Requisiti del Cliente**.
+
+Per ogni **Processo** i **Requisiti da Soddisfare** variano in base alla **Prospettiva**, ossia **in base al tipo del Cliente**.
+
+Questa **Capacità di Soddisfare i Requisiti dei Clienti** si misura tramite i ***Key Performance Indicator***(**KPI**).
+
+Un **KPI** è un **Indicatore Quantificabile dell’Efficacia e/o dell’Efficienza di un processo o di un sottoprocesso**.
+
+Un **KPI** ha le seguenti caratteristiche:
+- **Quantificabile**
+- **Rilevabile**
+- Correlato con l’**Obiettivo di Business Interno di Processo**
+
+Per poter misurare un **Processo** tramite i **KPI** è necessario **crearne la mappa** ossia **Identificarne gli Output, gli Obiettivi e le Attività Principali**.
+
+## Key Performance Indicator: Proprietà
+
+Nota la **Mappa di ogni Processo Strategico** è possibile creare i **KPI** che devono
+essere definiti in base ai seguenti principi:
+
+- **Significatività** = Collegamento con gli **Obiettivi Strategici**.
+- **Controllabilità** = **Misurazione di Risultati** che possono essere **influenzati** o **Azioni** che possono essere **intraprese**, **focalizzazione su un Periodo di Tempo**.
+- **Semplicità** = Facilità concettuale, **pochi Indicatori** sono preferibili a un metrica complessa, **possibilità di Trade-Offs** con altri **Sistemi di Misurazione**.
+- **Misurabilità** = Disponibilità, Affidabilità e Accuratezza dei dati.
+- **Equilibrio** = Collegamento degli **Indicatori Tecnici** con le **Attività di un Processo** e degli **Indicatori di Risultato** con gli **Obiettivi** e gli **Output** di un Processo,
+
+Gli **Indicatori di Risultato** misurano la **Performance a un momento dato**, mentre gli **Indicatori Tecnici** misurano **Attività che influenzano la Performance**.
+
+## La mappa degli Indicatori
+
+Un **Indicatore** cattura un **singolo Aspetto del Fenomeno** che misura.
+
+Per **misurare efficacemente il Fenomeno** è necessario definire una **Mappa Integrata di KPI** che copra **diversi Punti di Vista a diversi Livelli di Dettaglio**.
+
+La mappa deve chiarire:
+- **Fenomeno da Misurare** = Il Processo o il Soggetto da valutare.
+- **Obiettivi** = Specifica quale scopo deve raggiungere il processo o il soggetto, conoscendo gli obiettivi è possibile derivare quali sono gli aspetti più importanti da misurare per controllare il raggiungimento dell’obiettivo stesso.
+- **Misure** = Identificazione concreta ma ancora qualitativa degli aspetti da monitorare.
+- **Stakeholder** = Soggetti interessati ai KPI, soggetti diversi sono interessati ad aspetti diversi dello stesso fenomeno e conseguentemente a indicatori diversi, tipicamente a diversi livelli di aggregazione.
+- **Sorgente Dati** = Determina l’effettiva calcolabilità dell’indicatore.
+- **Formulazione** = Specifica la formula di calcolo dell’indicatore.
+
+## Overall Equipment Effectiveness
+
+**OEE** è il **principale KPI** per misurare la **Capacità di Produzione di un'Azienda Manifatturiera**.
+
+$$Availability\times Performance\times Quality$$
+
+- **Availability** [0;1]: Percentuale di tempo lavorato rispetto al tempo disponibile.
+- **Performance** [0;1]: Percentuale di pezzi effettivamente lavorati rispetto ai pezzi teoricamente lavorabili.
+Nella pianificazione vengono calcolati i pezzi che possono essere lavorati a regime ottimale, qualsiasi riduzione di queste prestazioni indica una diminuzione della produzione.
+- **Quality** [0;1]: Rapporto percentuale dei pezzi conformi sul totale dei pezzi prodotti. In questo modo, si evidenziano i cali di produzione legati a scarti o rilavorazioni, che incidono sull'inefficienza complessiva.
+
+Il **calcolo dell'OEE** richiede **SCADA e MES**.
+
+## Fasi del BPR
+
+- Identificazione dei **Processi da reingegnerizzare**:
+  - Descrivere i **Processi**
+  - Identificazione del **Breakthrough**
+  - Analisi dei **Tempi di Ciclo**
+  - Analisi della **Creazione del Valore**
+- Definizione delle **Priorità di Intervento** sulla base del loro impatto (**Analisi di Pareto**)
+- **Reingegnerizzione dei Processi** per rimuovere le **Barriere alla Performance**
+- Implementazione del cambiamento
+- Istituzionalizzazione delle misure per il miglioramento continuo
+
+## L’identificazione dei Breakthrough
+
+Esistono dei **Livelli di Performance di un Processo** il cui raggiungimento comporta un **miglioramento significativo** e più che proporzionale dei benefici.
+
+Vi sono due modalità fondamentali per l’identificazione dei **Breakthrough**:
+
+- La **Voce del Cliente**
+- Il **Benchmarking**
+
+## L’analisi della “voce del cliente”
+
+L'**Analisi della Voce del Cliente** o **VoC** (**Voice of the Customer**) è un **processo sistematico** attraverso il quale un'**azienda** raccoglie, interpreta e comprende le **opinioni**, le **aspettative** e le **esperienze** dei propri **clienti** riguardo a **prodotti**, **servizi** o **brand**.
+
+Questa analisi può essere condotta tramite vari metodi, tra cui:
+- **Sondaggi e Questionari**: Raccogliendo **feedback diretti** da parte dei **clienti**.
+- **Interviste**: Incontri faccia a faccia o telefonici per ottenere risposte più approfondite.
+- **Social Media e Recensioni Online**: Monitorando i **commenti** e le **opinioni** espresse dai **clienti** sulle **piattaforme digitali**.
+- **Focus Group**: **Gruppi di discussione con clienti selezionati** per raccogliere insight più qualitativi.
+- **Analisi dei Dati di Supporto Clienti**: Esaminando le **richieste** e le **problematiche** sollevate attraverso canali come il **servizio clienti** o i **call center**.
+
+## Che succede se non si include la Voce del cliente in un progetto BPR?
+
+- Potenziale rischio per l’organizzazione di non offrire ciò che il cliente vuole quando lo vuole
+- Possibile perdita di posizionamento e in prospettiva perdita di clienti chiave
+- Rischio di focalizzare il BPR su aree non a valore per il cliente
+- Ambiente di lavoro fra i clienti interni stressante
+
+## Il Benchmarking
+
+Il **Benchmarking** è un **processo di comparazione**, attraverso il quale l’**Organizzazione** compara le **performance interne** con **standard esterni** di eccellenza.
+
+Il **Benchmarking** utilizza i **KPI** per **quantificare la prestazione** con l'obiettivo di **ottenere** e **mantenere** una performance **Best-in-Class** attraverso **iniziative di miglioramento**.
+
+Il **Benchmarking** può notevolmente **accelerare un processo di cambiamento** con un’**efficacia di comunicazione considerevole**.
+
+## Tecniche BPR: l’Analisi dei Tempi Ciclo
+
+L'**Analisi dei Tempi di Ciclo** (o ***Cycle Time Analysis***) è una tecnica
+utilizzata per **misurare** e **ottimizzare** l'**efficienza dei processi produttivi** o **operativi**, analizzando il **tempo necessario per completare un ciclo di lavoro**.
+
+Il **Tempo di Ciclo** può essere suddiviso in diverse fasi:
+- **Tempo di Lavorazione** (***Processing Time***): Il **tempo effettivo** dedicato alla **realizzazione dell'attività** o del **prodotto**.
+- **Tempo di Attesa** (***Waiting Time***): Il tempo durante il quale il **lavoro è in attesa** tra una fase e l'altra.
+- **Setup Time**: Il tempo richiesto per preparare una **macchina** o un **processo** prima di iniziare il lavoro.
+- **Tempo di Movimentazione** (***Transport Time***): Il tempo impiegato per **spostare materiali** o **informazioni** da una fase all'altra.
+- **Tempo di Inattività** (***Idle Time***): Periodi in cui **risorse** o **macchine non vengono utilizzate**.
+
+Obiettivi dell'analisi
+- **Identificare Colli di Bottiglia**
+- **Ridurre i Tempi Morti**
+- **Ottimizzare le Risorse**
+- **Aumentare l'Efficienza Complessiva**
+
+## Analisi dei Tempi Ciclo: il Caso delle Utilities
+
+1. **Raccolta Dati di Consumo** (**SCADA**):
+   - **Lettura dei Contatori**
+   - Eventuali stime se i dati reali non sono disponibili
+2. **Validazione e Normalizzazione Dati** (**ERP**):
+   - **Controlli di Coerenza**
+   - Correzioni o rettifiche in caso di errori di misura
+3. **Calcolo del Consumo Fatturabile** (**ERP**)
+   - Determinazione dei kWh consumati nel periodo di fatturazione
+   - Ripartizione per fasce orarie o tariffarie
+4. **Applicazione delle Tariffe** (**ERP**)
+   - Prezzo dell’energia
+   - Quote fisse
+   - Oneri di sistema e imposte
+5. **Generazione della Bolletta**, documento con dettaglio **consumi**, **costi** e **scadenze di pagamento**.
+6. **Invio della Fattura al Cliente**, **Gestione del Pagamento** e Gestione** Post-Fatturazione**
+

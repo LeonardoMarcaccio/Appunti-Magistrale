@@ -1,0 +1,82 @@
+** Costruzione di DFA **
+
+Consideriamo l'alfabeto {a,b}. 
+Realizzare dei DFA che riconoscono i seguenti linguaggi:
+
+1 - stringhe con un numero dispari di a
+
+2 - stringhe che terminano con bb
+
+3 - stringhe che non terminano con bb
+
+4 - stringhe con un numero pari di a ed almeno 3 b
+
+SI bbb,bababb
+
+NO \epsilon,bbaa,bababa
+
+5 - stringhe che contengono la sottostringa aaa o
+la sottostringa aba (contengono almeno una delle due)
+
+SI babab,aaaa,aaaba
+
+NO \epsilon,abba,a,b,ab
+
+6 - Realizzare un DFA che riconosca il seguente linguaggio su alfabeto {0,1}:
+stringhe che interpretate come numero binario risultano un multiplo di 5 
+
+SI 101,1010,1111,0
+
+NO 111,1,10
+
+
+7 - Sempre considerando alfabeto {0,1}, realizzare un DFA che controlla la
+correttezza delle somme binarie:
+data la stringa: a_0 b_0 c_0 a_1 b_1 c_1 ... a_n b_n c_n controlla 
+se a_n...a_1 a_0 + b_n...b_1 b_0 = c_n...c_1 c_0
+(cioè a+b=c con a,b,c numeri binari con stessa lunghezza) 
+
+** Costruzione di NFA **
+
+8 - Dato l'alfabeto {a,b} realizzare un NFA che riconosce le stringhe che 
+contengono aaa oppure aba
+
+SI babab,aaaa,aaaba
+
+NO \epsilon,abba,a,b,ab
+
+9 - Realizzare un NFA che riconosce le stringhe non vuote sull'alfabeto {0,1,2} 
+in cui l'ultima cifra appare almeno una volta in precedenza
+
+SI 011,121,22,0120
+
+NO \epsilon,012,20,1
+
+10 - Realizzare un NFA che riconosce le stringhe non vuote sull'alfabeto {0,1,2} 
+in cui l'ultima cifra NON appare in precedenza
+
+SI 012,20,1
+
+NO \epsilon,011,121,22,0120
+
+** Costruzione di epsilon-NFA **
+
+11 - Realizzare un epsilon-NFA che riconosce le stringhe non vuote sull'alfabeto {0,1,2} 
+in cui l'ultima cifra NON appare in precedenza 
+(rispetto all'esercizio precedente si sfrutti il fatto di disporre delle transizioni epsilon).
+
+** Trasformazione da NFA a DFA **
+
+12 - Dato l'alfabeto {a,b} si consideri l'NFA fatto all'esercizio 8, che riconosce 
+le stringhe che contengono aaa oppure aba. Trasformarlo in DFA.
+
+Per casa: 
+
+1 Valutare se e' possibile realizzare un DFA che controlli la  
+correttezza delle somme binarie come nell'esercizio 7, che riceva 
+pero' l'input nel formato a_n b_n c_n...a_0 b_0 c_0 
+
+2 Valutare se e' possibile realizzare un DFA che controlli la  
+correttezza delle somme binarie come nell'esercizio 7, che riceva 
+pero' l'input nel formato a_0...a_n b_0...b_n c_0...c_n
+
