@@ -585,17 +585,19 @@ Primo compito del **Progettista** è quello di **Descrivere** e **Classificare**
 - ***Enterprise Transformation***: Ricerca una **Riconfigurazione del Business** (Pianificare
 il Business).
 
-## Fasi del BPR
+---
 
-- Identificazione dei **Processi** da reingegnerizzare:
-  - Descrivere i Processi
-  - Identificazione del Breakthrough
-  - Analisi dei Tempi di Ciclo
-  - Analisi della Creazione del Valore
-- Definizione delle **Priorità di Intervento** sulla base del loro impatto (***Analisi di Pareto***)
+# Fasi del BPR
+
+- Identificazione dei **Processi da reingegnerizzare**:
+  - Descrivere i **Processi**
+  - Identificazione del **Breakthrough**
+  - Analisi dei **Tempi di Ciclo**
+  - Analisi della **Creazione del Valore**
+- Definizione delle **Priorità di Intervento** sulla base del loro impatto (**Analisi di Pareto**)
 - **Reingegnerizzione dei Processi** per rimuovere le **Barriere alla Performance**
-  - Implementazione del Cambiamento
-  - Istituzionalizzazione delle Misure per il Miglioramento Continuo.
+- Implementazione del cambiamento
+- Istituzionalizzazione delle misure per il miglioramento continuo
 
 ## Descrivere i Processi
 
@@ -607,7 +609,7 @@ un’**azienda****.
 - **Fase**: Una **Fase** è una **Tappa di un Processo** e ha lo scopo di **descrivere** il modo in cui **un Processo è Implementato**.
 - **Attività**: è il livello adottato nella **Fase di Studio dei Processi**. Sono determinate **scomponendo ulteriormente le Fasi secondo una Logica Sequenziale**.
 
-## Variabili di Progettazione
+### Variabili di Progettazione
 
 Le **Variabili di Progettazione** dei processi sono:
 
@@ -628,7 +630,7 @@ Le **Variabili di Progettazione** dei processi sono:
   - Necessario per **Governare il Processo** e per **valutare gli Attori Aziendali** che lo eseguono.
   - Si ottiene realizzando sistemi di ***Key Performance Indicator*** (**KPI**) o di **Balanced Scorecard**.
 
-## Linear Responsability Charting
+### Linear Responsability Charting
 
 Determina una **Visione Tabellare della Responsabilità Organizzativa** che integra quella dell’organigramma che non specifica il ruolo delle varie strutture nel processo considerato.
 
@@ -640,7 +642,7 @@ Il **Ruolo** è indicato dalle **Etichette** inserite nelle celle della griglia 
 - A = partecipa a tempo parziale, fornisce assistenza operativa e supporto
 - I = è sistematicamente informato
 
-## Le Risorse Umane
+### Le Risorse Umane
 
 Le **Risorse Umane** determinano la **differenza tra il Risultato Effettivo e il Massimo Teoricamente possibile** da una **Configurazione del Processo**.
 
@@ -648,7 +650,7 @@ Le **Tecnologie Innovative** necessitano di **Figure Professionali** che non esi
 
 Il **Reperimento** può essere **costoso** e **complesso** perché si manifesta per tutte le aziende contemporaneamente.
 
-## Key Performance Indicator
+### Key Performance Indicator
 
 Per verificare l’**Efficacia del Processo** è necessario **misurare quantitativamente** come questo soddisfa i **Requisiti del Cliente**.
 
@@ -665,7 +667,7 @@ Un **KPI** ha le seguenti caratteristiche:
 
 Per poter misurare un **Processo** tramite i **KPI** è necessario **crearne la mappa** ossia **Identificarne gli Output, gli Obiettivi e le Attività Principali**.
 
-## Key Performance Indicator: Proprietà
+#### Key Performance Indicator: Proprietà
 
 Nota la **Mappa di ogni Processo Strategico** è possibile creare i **KPI** che devono
 essere definiti in base ai seguenti principi:
@@ -678,7 +680,7 @@ essere definiti in base ai seguenti principi:
 
 Gli **Indicatori di Risultato** misurano la **Performance a un momento dato**, mentre gli **Indicatori Tecnici** misurano **Attività che influenzano la Performance**.
 
-## La mappa degli Indicatori
+#### La mappa degli Indicatori
 
 Un **Indicatore** cattura un **singolo Aspetto del Fenomeno** che misura.
 
@@ -692,7 +694,7 @@ La mappa deve chiarire:
 - **Sorgente Dati** = Determina l’effettiva calcolabilità dell’indicatore.
 - **Formulazione** = Specifica la formula di calcolo dell’indicatore.
 
-## Overall Equipment Effectiveness
+#### Overall Equipment Effectiveness
 
 **OEE** è il **principale KPI** per misurare la **Capacità di Produzione di un'Azienda Manifatturiera**.
 
@@ -705,18 +707,6 @@ Nella pianificazione vengono calcolati i pezzi che possono essere lavorati a reg
 
 Il **calcolo dell'OEE** richiede **SCADA e MES**.
 
-## Fasi del BPR
-
-- Identificazione dei **Processi da reingegnerizzare**:
-  - Descrivere i **Processi**
-  - Identificazione del **Breakthrough**
-  - Analisi dei **Tempi di Ciclo**
-  - Analisi della **Creazione del Valore**
-- Definizione delle **Priorità di Intervento** sulla base del loro impatto (**Analisi di Pareto**)
-- **Reingegnerizzione dei Processi** per rimuovere le **Barriere alla Performance**
-- Implementazione del cambiamento
-- Istituzionalizzazione delle misure per il miglioramento continuo
-
 ## L’identificazione dei Breakthrough
 
 Esistono dei **Livelli di Performance di un Processo** il cui raggiungimento comporta un **miglioramento significativo** e più che proporzionale dei benefici.
@@ -726,7 +716,7 @@ Vi sono due modalità fondamentali per l’identificazione dei **Breakthrough**:
 - La **Voce del Cliente**
 - Il **Benchmarking**
 
-## L’analisi della “voce del cliente”
+### L’analisi della “voce del cliente”
 
 L'**Analisi della Voce del Cliente** o **VoC** (**Voice of the Customer**) è un **processo sistematico** attraverso il quale un'**azienda** raccoglie, interpreta e comprende le **opinioni**, le **aspettative** e le **esperienze** dei propri **clienti** riguardo a **prodotti**, **servizi** o **brand**.
 
@@ -737,14 +727,14 @@ Questa analisi può essere condotta tramite vari metodi, tra cui:
 - **Focus Group**: **Gruppi di discussione con clienti selezionati** per raccogliere insight più qualitativi.
 - **Analisi dei Dati di Supporto Clienti**: Esaminando le **richieste** e le **problematiche** sollevate attraverso canali come il **servizio clienti** o i **call center**.
 
-## Che succede se non si include la Voce del cliente in un progetto BPR?
+#### Che succede se non si include la Voce del cliente in un progetto BPR?
 
 - Potenziale rischio per l’organizzazione di non offrire ciò che il cliente vuole quando lo vuole
 - Possibile perdita di posizionamento e in prospettiva perdita di clienti chiave
 - Rischio di focalizzare il BPR su aree non a valore per il cliente
 - Ambiente di lavoro fra i clienti interni stressante
 
-## Il Benchmarking
+### Il Benchmarking
 
 Il **Benchmarking** è un **processo di comparazione**, attraverso il quale l’**Organizzazione** compara le **performance interne** con **standard esterni** di eccellenza.
 
@@ -770,7 +760,7 @@ Obiettivi dell'analisi
 - **Ottimizzare le Risorse**
 - **Aumentare l'Efficienza Complessiva**
 
-## Analisi dei Tempi Ciclo: il Caso delle Utilities
+### Analisi dei Tempi Ciclo: il Caso delle Utilities
 
 1. **Raccolta Dati di Consumo** (**SCADA**):
    - **Lettura dei Contatori**
@@ -787,4 +777,93 @@ Obiettivi dell'analisi
    - Oneri di sistema e imposte
 5. **Generazione della Bolletta**, documento con dettaglio **consumi**, **costi** e **scadenze di pagamento**.
 6. **Invio della Fattura al Cliente**, **Gestione del Pagamento** e Gestione** Post-Fatturazione**
+
+## Tecniche BPR: l’Analisi di Pareto
+
+L'**Analisi di Pareto** è uno **strumento statistico** utilizzato per **identificare e focalizzarsi** sugli elementi che hanno il **maggiore impatto** su un determinato **Fenomeno**.
+
+***Si basa sul principio di Pareto, noto anche come legge 80/20, che afferma che circa l'80% degli effetti deriva dal 20% delle cause.***
+
+### Obiettivi dell'Analisi di Pareto
+
+L'**Analisi di Pareto** ha come obiettivo principale quello di **evidenziare le Cause Principali di un Problema**, per permettere alle organizzazioni di concentrarsi su quelle **aree che generano il maggior impatto**, piuttosto che dispersa risorse su **fattori meno significativi**.
+
+### Le Fasi dell'Analisi di Pareto
+
+- **Raccolta dei Dati**: I **Dati** vengono **raccolti in relazione a un Fenomeno o Problema** specifico.
+- **Classificazione e Ordinamento**: I **Dati** raccolti vengono **Classificati in Categorie** e **Ordinati in ordine decrescente di Frequenza o Impatto**, questo consente di identificare le cause più frequenti o quelle che causano il maggior danno.
+- **Creazione di un Grafico di Pareto**: Si costruisce un **Grafico a Barre** in cui l'asse delle **x rappresenta le diverse Categorie**, l'asse delle **y mostra la Frequenza o l'Importanza** relativa di ogni categoria, e le barre sono ordinate dalla più alta alla più bassa.
+- **Identificazione del "*20% cruciale*"**
+
+## Rimuovere le Barriere alla Performance
+
+Bisofgna sfruttare **Strumenti Analitici** che aiutano a concepire nuovi modi di organizzare il **Flusso di Lavoro**, per esempio:
+- **Azienda Estesa** = Gestire i **Processi oltre i Confini Organizzativi dell’impresa**.
+- **Parallelizzazione** = Sostituire **Processi Sequenziali** con **Processi Parallelizzati**.
+- **Riallocazione** = **Riposizionare Esperti Funzionali** incorporando l’expertise in sistemi e strumenti.
+- **Eliminazione** = Verificare la **necessità di Attività e Funzioni Tradizionali**.
+- **Cicli di Miglioramento Continuo** = Costruire **Cicli di Feedback** per stimolare il miglioramento di performance.
+
+### I Ruoli della Tecnologia nell’Innovazione
+
+L’**Information Technology** va strategicamente **interpretata come Fattore di Successo Ottimale** per le prestazioni dei processi di business, ma devono essere **sviluppate contestualmente** con il “**Modello d’Impresa**”.
+
+La **Tecnologia** è un **Fattore Abilitante dell’Innovazione**, tuttavia abbiamo affermato più volte che è necessario **pensare alla Scelta delle Tecnologie di Implementazione DOPO avere fatto Innovazione su Processi e Informazioni**.
+
+Come stanno assieme i due punti precedenti? La risposta non è assoluta.
+
+Ci sono 2 possibili soluzioni:
+- **Innovazioni Tecnology-Driven** si basano su una **Tecnologie estremamente Innovative** tale per cui gli **Stake-Holder del Servizio/Problema non riescono neanche a immaginarne l’utilizzo**.
+- **Innovazioni Application-Driven** si basano su una **Tecnologie Note** tale per cui gli **Stake-Holder del Servizio/Problema ne conoscono le Potenzialità**, l’**Innovazione** sta nel **immaginarsi l’utilizzo nello Specifico Contesto**.
+
+Stampati le slide da 77 a 85
+
+---
+
+# Modellazione funzionale con Dataco Data Flow Diagram
+
+## Che cosa modella un DFD?
+
+Un **Sistema** è visto come una **Rete di Processi Funzionali interconnessi da Depositi di Dati**.
+
+I **DFD** enfatizzano le **Operazioni effettuate sulle Informazioni** e le **Dipendenze Funzionali** che vengono a crearsi fra i vari processi in base ai **Flussi di Informazione**.
+
+I **Processi** possono essere:
+- Definiti a qualunque **Livello di Astrazione**
+- Raffinabili mediante **Scomposizione Gerarchica** in un **Insieme di Processi più Elementari**.
+
+## Entità rappresentate in un DFD
+
+- **Processi** che trasformano dati -> Bolle;
+- **Flussi** che muovono dati -> Frecce;
+- **Agenti Esterni** (detti anche terminatori) che producono e consumano dati -> Rettangoli;
+- **Depositi di Dati** che memorizzano informazioni in modo passivo -> Doppie linee.
+
+## Sintassi
+
+Un DFD è una quartupla $<P,D,A,F>$ dove:
+
+- $P = \{p_1, p_2,\dots, p_n\}$ è un **Insieme Finito non vuoto di Processi**;
+- $D = \{d_1, d_2,\dots, d_r\}$ è un **Insieme Finito di Depositi**;
+- $A = \{a_1, a_2,\dots, a_s\}$ è un **Insieme Finito di Agenti**;
+- $F= \{f∈(P×(P∪D∪A))∪((P∪D∪A)×P)\}$ è un **Insieme Finito di Flussi**.
+
+
+## Regole e Vincoli
+
+Regole:
+- Scegliere **Nomi Significativi** per i **Processi, Flussi, Depositi, e Agenti**.
+- **Numerare i processi**.
+- Disegnare i **DFD** seguendo **Criteri Estetici**.
+- Evitare **DFD** eccessivamente **Complessi**.
+- Accertarsi della **Coerenza Interna di un DFD** e che sia coerente con quelli ad esso associati.
+
+Vincoli:
+- Evitare **Processi a Consumo Infinito** (pozzi).
+- **Sospettare di Processi a Generazione Spontanea**.
+- **Depositi** a **sola Lettura** o a **sola Scrittura** sono **rari**.
+- **Non devono esistere Flussi di Dati** fra :
+  - Due agenti esterni,
+  - Due depositi,
+  - Un’entità esterna e un deposito.
 

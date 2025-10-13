@@ -223,3 +223,60 @@ la **distribuzione dei pattern non etichettati** può aiutare a **ottimizzare la
 
 **Naturale**: Addestramento continuo (per tutta la vita). Addestramento attivo in working mode. Coesistenza di approccio supervisionato e non supervisionato.
 
+## Reinforcement Learning (RL)
+
+L’obiettivo è **apprendere un comportamento ottimale** a partire dalle **esperienze passate**.
+
+Un **Agente** esegue **azioni** che **modificano l’ambiente**, provocando passaggi da uno stato all’altro.
+
+Quando l’**Agente** ottiene **risultati positivi** riceve una **ricompensa** (reward) che però può essere temporalmente ritardata rispetto all’azione, o alla sequenza di azioni, che l’hanno determinata.
+
+Obiettivo è apprendere l’**Azione Ottimale** in ciascun stato, in
+modo da massimizzare la somma dei reward ottenuti nel lungo
+periodo.
+
+![alt text](image-2.png)
+
+## Parametri e Funzione Obiettivo
+Il comportamento di un **modello** $M$ di **machine learning** è regolato da un **set di parametri** $Θ$, per rendere esplicita questa dipendenza indichiamo il modello come M(Θ).
+
+L’apprendimento consiste nel **determinare il valore ottimo** $Θ^∗$ di questi **parametri**.
+
+Dato un **training set** $𝑇𝑟𝑎𝑖𝑛$ e un **insieme di parametri**, la **funzione obiettivo** $𝑓(𝑇𝑟𝑎𝑖𝑛, 𝑀(Θ))$ può indicare:
+
+- L’**Ottimalità della Soluzione** (da massimizzare).
+$$Θ^∗ = 𝑎𝑟𝑔𝑚𝑎𝑥_Θ 𝑓(𝑇𝑟𝑎𝑖𝑛, 𝑀(Θ))$$
+- L’**Errore** o **Perdita** (loss-function) da minimizzare.
+$$Θ^∗ = 𝑎𝑟𝑔𝑚𝑖𝑛_Θ 𝑓(𝑇𝑟𝑎𝑖𝑛, 𝑀(Θ))$$
+
+La **Funzione Obbiettivo** può essere ottimizzata:
+- **Esplicitamente**, con metodi che operano a partire dalla sua **definizione matematica**.
+- **Implicitamente**, utilizzando **euristici** che modificano i **parametri** in modo coerente con $𝑓$.
+
+## Iperparametri
+
+Stabilito il modello da utilizzare, **prima dell’apprendimento** vero e proprio, deve essere definito il valore degli **Iperparametri**.
+
+Gli **iperparametri** $𝐻$ definiscono i **dettagli architetturali del modello** e della corrispondente procedura di training, per rendere esplicita anche questa dipendenza utilizziamo $𝑀(𝐻, Θ)$.
+
+## Training, Validation, Test
+
+Il **Training Set** (Train) è l’**insieme di pattern** su cui **addestrare il modello**, trovando il valore ottimo per i parametri $Θ$.
+
+Il **Validation Set** (Valid) è l’**insieme di pattern** su cui **tarare gli iperparametri** $H$ (ciclo esterno).
+
+Il **Test Set** (Test) è l’**insieme di pattern** su cui **valutare le prestazioni finali**.
+
+## K-fold Cross-Validation
+
+Una scelta più robusta degli **iperparametri** si ottiene con la procedura di ***k-fold Cross-Validation***.
+
+![alt text](image-3.png)
+
+Per ogni **combinazione di iperparametri** $H_i$ che si vuole valutare:
+- Si esegue 5 volte il **training** scegliendo uno dei **fold** come **Valid** e i 4 rimanenti come **Train**.
+- Si calcola l’**accuratezza** o $avg\_acc_i$ come **media/mediana** delle 5 **accuratezze sui rispettivi Valid**.
+
+Si sceglie la **combinazione di iperparametri** con **migliore** $avg\_acc_i$.
+
+Scelti gli **iperparametri** ottimali si **riaddestra il modello** su tutto il **training set** (5 fold) e, solo a questo punto, si verificano le **prestazioni sul test set**.

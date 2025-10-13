@@ -1,0 +1,5 @@
+Il secondo esercizio non può essere modellato tramite un DFA, poiché non è possibile definire un insieme finito di stati (Q).
+
+La difficoltà nasce dal fatto che non conosciamo a priori il numero di cifre dei vari addendi: di conseguenza, non è possibile stabilire in maniera deterministica dove termini un addendo e dove inizi quello successivo.
+
+Se invece il numero di cifre fosse noto, sarebbe possibile costruire un DFA in cui ogni stato rappresenta una specifica combinazione delle somme parziali tra le cifre degli addendi (unità, decine, centinaia, ecc.). In questo modo si potrebbero coprire tutte le possibili somme e verificare la correttezza del risultato.
