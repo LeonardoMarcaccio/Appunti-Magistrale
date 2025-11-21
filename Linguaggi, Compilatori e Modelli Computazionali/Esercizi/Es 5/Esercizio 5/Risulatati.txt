@@ -1,0 +1,32 @@
+Left First:
+
+Calculating expression
+prog
+  exp: prod2 with MINUS
+    exp: prod4 with NUM 3
+    exp: prod1 with TIMES
+      exp: prod3 with LPAR RPAR
+        exp: prod2 with MINUS
+          exp: prod2 with MINUS
+            exp: prod4 with NUM 4
+            exp: prod4 with NUM 2
+          exp: prod4 with NUM 7
+      exp: prod4 with NUM 5
+The result is: 28
+
+Right First:
+
+Calculating expression
+prog
+  exp: prod2 with MINUS
+    exp: prod4 with NUM 3
+    exp: prod1 with TIMES
+      exp: prod3 with LPAR RPAR
+        exp: prod2 with MINUS
+          exp: prod4 with NUM 4
+          exp: prod2 with MINUS
+            exp: prod4 with NUM 2
+            exp: prod4 with NUM 7
+      exp: prod4 with NUM 5
+The result is: -42
+

@@ -333,6 +333,7 @@ modificato un certo valore.
 - **Affidabilità dell’Informazione Aziendale**, provenendo da un’**unica sorgente**, non si rischia che i **Dati Direzionali** siano **Inconsistenti** perdendo di conseguenza di credibilità.
 
 ## Il paradigma ERP: estensione e modularità
+
 L’ampiezza della copertura dei **Sistemi ERP** fa si che questi possano essere utilizzati come **unica soluzione** per il **Sistema Informativo**.
 
 La **Modularità** del sistema permette all’azienda di scegliere solo i **moduli di interesse**.
@@ -444,7 +445,7 @@ Un **Concetto** per descrivere come il **Progresso Tecnologico** tenda ad **acce
 
 Questo accade perché ogni **Innovazione Tecnologica** fornisce gli strumenti per **sviluppare ulteriori innovazioni** a un ritmo sempre più rapido.
 
-## l ciclo di Deming
+## Il ciclo di Deming
 
 Sintetizza la **Logica** secondo la quale **gestire il Ciclo di Innovazione**.
 
@@ -464,8 +465,7 @@ Nella **Fase di Pianificazione** si collocano:
 - La **Definizione degli Impegni e delle Risorse necessarie**, sia per i **Progetti**,
 sia per le **Attività Concorrenti di Conduzione e Manutenzione dei Sistemi in
 esercizio**;
-- La **Stesura del Documento di Piano** e la correlata **Definizione del Budget e
-delle Responsabilità**, con l’approvazione da parte dei vertici.
+- La **Stesura del Documento di Piano** e la correlata **Definizione del Budget e delle Responsabilità**, con l’approvazione da parte dei vertici.
 
 ## Realizzazione
 

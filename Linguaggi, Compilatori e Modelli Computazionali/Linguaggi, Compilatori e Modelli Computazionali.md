@@ -286,7 +286,7 @@ Automa per $R+S$, $RS$, e $R^∗$
 
 Ogni **Automa** può essere ridotto ad una **composizine** dei precedenti.
 
-## Proprieta’ dei Linguaggi Regolari
+## Proprietà dei Linguaggi Regolari
 
 - ***Pumping Lemma***:
   - Dato un **Linguaggio**, se usando **Pumping Lemma** si ottiene una **contraddizione** allora esso **non è Regolare**.
@@ -362,7 +362,7 @@ Sia $L$ riconosciuto da un **DFA** $A = (Q, Σ, δ, q_0, F )$ e sia $B = (Q, Σ,
 
 Se $L$ e $M$ sono **Regolari**, allora anche $L ∩ M$ è **Regolare**.
 
-Per la **Legge di DeMorgan**, $L ∩ M = \overline{\overline{L} ∪ \overline{M}}$, sappiamo gia’ che i **Linguaggi Regolari** sono **chiusi rispetto al Complemento e all’Unione**.
+Per la **Legge di DeMorgan**, $L ∩ M = \overline{\overline{L} ∪ \overline{M}}$, sappiamo già che i **Linguaggi Regolari** sono **chiusi rispetto al Complemento e all’Unione**.
 
 #### Prova alternativa.
 
@@ -403,7 +403,7 @@ Sia $L$ riconosciuto da un **FA** $A$, modifichiamo $A$ per renderlo un **FA** p
 2. Rendiamo il vecchio stato iniziale l’unico stato finale.
 3. Creiamo un nuovo stato iniziale $p_0$, con $δ(p_0, ϵ) = F$ (I vecchi stati finali).
 
-## Proprieta’ di Decisione
+## Proprietà di Decisione
 
 - è L = ∅?
 - è w ∈ L?
@@ -553,7 +553,7 @@ Sia $G = (V, T, P, S)$ una **CFG**, e $A ∈ V$, i seguenti sono equivalenti:
 
 Da 1 derivo 3, da 3 derivo 2 e da 2 derivo 1.
 
-### Ambiguita’ in Grammatiche e Linguaggi
+### Ambiguità in Grammatiche e Linguaggi
 
 Nella **Grammatica**:
 
@@ -570,13 +570,13 @@ Questo ci dà due **Alberi Sintattici**:
 
 ![alt text](image-8.png)
 
-<ins> ***L’esistenza di varie Derivazioni di per se non e’ pericolosa, e’ l’esistenza di vari Alberi Sintattici che rovina la Grammatica***. <ins>
+<ins> ***L’esistenza di varie Derivazioni di per se non è pericolosa, è l’esistenza di vari Alberi Sintattici che rovina la Grammatica***. <ins>
 
 ### Ambiguità
 
-Sia $G = (V, T, P, S)$ una **CFG**, diciamo che $G$ e’ **Ambigua** se esiste una **Stringa** in $T^∗$ che ha piu’ di un **Albero Sintattico**.
+Sia $G = (V, T, P, S)$ una **CFG**, diciamo che $G$ è **Ambigua** se esiste una **Stringa** in $T^∗$ che ha piu’ di un **Albero Sintattico**.
 
-Se ogni Stringa in $L(G)$ ha un unico **Albero Sintattico**, $G$ e’ detta **Non-Ambigua**.
+Se ogni Stringa in $L(G)$ ha un unico **Albero Sintattico**, $G$ è detta **Non-Ambigua**.
 
 Ad un **Albero Sintattico** corrispondono molte **Derivazioni**, ma:
 - ad ogni (diverso) **Albero Sintattico** corrisponde un’unica (diversa) **Derivazione a Sinistra**.
@@ -584,6 +584,252 @@ Ad un **Albero Sintattico** corrispondono molte **Derivazioni**, ma:
 
 Data una **CFG** $G$, una **Stringa Terminale** $w$ ha **due distinti Alberi Sintattici** se e solo se $w$ ha due **distinte Derivazioni a Sinistra** dal simbolo iniziale.
 
-Un **CFL** $L$ e’ **inerentemente Ambiguo** se tutte le **Grammatiche** per $L$ sono **Ambigue**.
+Un **CFL** $L$ è **inerentemente Ambiguo** se tutte le **Grammatiche** per $L$ sono **Ambigue**.
+
+---
+
+# Automi a Pila
+
+## Definizione
+
+Un **Automa a Pila** (**PDA** o ***Push Down Automaton***) è in pratica un **ϵ-NFA** con una **Pila**.
+
+In una transizione un PDA:
+1. Consuma un **simbolo di input** o esegue una **transizione** $ϵ$.
+2. Va in un **nuovo Stato** o **rimane dove è**.
+3. Rimpiazza il **top della Pila con una Stringa** (consuma il carattere in cima, e mette al suo posto una stringa, eventualmente vuota o uguale al carattere consumato lasciando quindi la pila inalterata)
+
+![alt text](image-9.png)
+
+### Definizione Formale di PDA
+
+Un **PDA** è una tupla di 7 elementi:
+
+$$P = (Q, Σ, Γ, δ, q_0, Z_0, F)$$
+
+dove:
+- $Q$ è un **Insieme Finito di Stati**,
+- Σ è un **Alfabeto Finito di Input**,
+- Γ è un **Alfabeto Finito di Pila**,
+- δ è una **Funzione di Transizione** da $Q×(Σ∪{ϵ})×Γ$ a **Sottinsiemi** di $Q × Γ^∗$, perché **Non Deterministico**,
+- $q_0$ è lo stato iniziale,
+- $Z_0 ∈ Γ$ è il **Simbolo Iniziale per la Pila**,
+- $F ⊆ Q$ è l’**Insieme degli Stati di Accettazione**.
+
+## Descrizioni Istantanee
+
+Un **PDA** passa da una **configurazione** ad un’altra:
+• Consumando un **Simbolo di Input** o tramite **Transizione** $ϵ$,
+• Consumando la **Cima dello Stack** sostituendolo con una **Stringa**, eventualmente vuota.
+
+Per ragionare sulle **computazioni dei PDA**, usiamo delle **Descrizioni Istantanee**, o **ID**, del **PDA**.
+
+### Definizione Formale
+
+Una **ID** è una tripla $(q, w, γ)$ dove $q$ è lo **Stato**, $w$ l’**Input Rimanente**, e $γ$ il **Contenuto della Pila**.
+
+Sia $P = (Q, Σ, Γ, δ, q_0, Z_0, F)$ un **PDA**, allora:
+
+$$∀w ∈ Σ^∗, β ∈ Γ^∗ : (p, α) ∈ δ(q, a, X) ⇒ (q, aw, Xβ) ⊢ (p, w, αβ)$$
+
+Definiamo $\overset{∗}{⊢}$ la **Chiusura Riflessiva** e **Transitiva** di $⊢$.
+
+## Accettazione per Stato Finale
+
+Sia $P = (Q, Σ, Γ, δ, q_0, Z_0, F)$ un **PDA**, il **linguaggio accettato** da **P** per **Stato Finale**:
+
+$$L(P) = \{w : (q_0, w, Z_0) \overset{∗}{⊢} (q, ϵ, α), q ∈ F\}$$
+
+## Accettazione per Pila Vuota
+Sia $P = (Q, Σ, Γ, δ, q_0, Z_0, F)$ un **PDA**, il **linguaggio accettato** da **P** per **Pila Vuota**:
+
+$$N(P) = \{w : (q_0, w, Z_0) \overset{∗}{⊢} (q, ϵ, ϵ)\}$$
+
+Nota: $q$ puo’ essere uno **Stato Qualunque**.
+
+## Da Pila Vuota a Stato Finale
+
+Se $L = N(P_N)$ per un **PDA** $P_N = (Q, Σ, Γ, δ_N , q_0, Z_0)$, allora esiste un **PDA** $P_F$, tale che:
+
+$$L = L(P_F)$$  
+
+### Dimostrazione
+
+Sia:
+
+$P_F=(Q ∪ \{p_0, p_f\}, Σ, Γ ∪ \{X_0\}, δ_F, p_0, X_0, \{p_f\})$
+
+dove:
+- $δ_F (p_0, ϵ, X_0)={(q_0, Z_0X_0)}$
+- $\forall q ∈ Q, a ∈ Σ ∪ \{ϵ\}, Y ∈ Γ : δ_F(q, a, Y)=δ_N(q, a, Y)$
+- $(p_f, ϵ) ∈ δ_F(q, ϵ, X_0)$
+
+![alt text](image-12.png)
+
+## Da Stato Finale a Pila Vuota
+
+Se $L = N(P_F)$ per un **PDA** $P_F = (Q, Σ, Γ, δ_F , q_0, Z_0, F)$, allora esiste un **PDA** $P_N$, tale che:
+
+$$L = N(P_N)$$
+
+![alt text](image-14.png)
+
+## Equivalenza di PDA e CFG
+
+Un **Linguaggio** è **generato** da una **CFG** se e solo se è **accettato** da un **PDA** per **Pila Vuota**, il che è valido se e solo se è **accettato** da un **PDA** per **Stato Finale**.
+
+![alt text](image-11.png)
+
+![alt text](image-15.png)
+
+---
+
+# PDA deterministici
+
+## Definizione
+
+Un **PDA** $P = (Q, Σ, Γ, δ, q_0, Z_0, F)$ è deterministico se e solo se:
+
+- ogni $δ(q, a, X)$, con $a ∈ Σ ∪ \{ϵ\}$, contiene **al più un elemento**
+- se $δ(q, a, X)$ **non vuoto** per un $a ∈ Σ$, allora $δ(q, ϵ, X)$ **vuoto**
+
+## DPDA che accettano per Stato Finale
+Mostreremo che Regolari ⊂ L(DPDA) ⊂ CFL
+
+Se $L$ è **Regolare**, allora $L = L(P)$ per qualche **DPDA** $P$.
+
+Dato che L è **Regolare**, esiste un DFA A tale che L = L(A).
+
+Sia $A = (Q, Σ, δ_A, q_0, F)$ definiamo il **DPDA** $P = (Q, Σ, \{Z_0\}, δ_P , q_0, Z_0, F)$, dove:
+
+$$δ_P(q, a, Z_0) = {(δ_A(q, a), Z_0)}$$
+
+per tutti i $p, q ∈ Q$ e $a ∈ Σ$.
+
+Un’induzione su $|w|$ ci da
+
+$$(q_0, w, Z_0) \overset{*}{⊢} (p, ϵ, Z_0) ⇔ \hat{δ}_A(q_0, w) = p$$
+
+Abbiamo visto che **Regolari** $⊆ L(DPDA)$.
+• $L_{wcwr} ∈ L(DPDA)$ \ Regolari
+• Ci sono linguaggi in $CFL$ \ $L(DPDA)$.
+
+## DPDA che accettano per Pila Vuota
+
+Possono riconoscere solo **Linguaggi con la Proprietà del Prefisso**.
+
+Un **Linguaggio** $L$ ha la **Proprietà del Prefisso** se **non esistono due Stringhe Distinte in $L$, tali che una è un Prefisso dell’altra**.
+
+$L$ è $N(P)$ per qualche **DPDA** $P$ se e solo se $L$ ha la **Proprietà del Prefisso** e $L$ è $L(P')$ per qualche **DPDA** $P'$.
+
+## DPDA e non ambiguità
+
+$L(DPDA)$ coincide con i **CFL** aventi **Grammatiche non Ambigue**? ***NO***
+
+l’inverso invece vale!
+
+Se $L=N(P)$ per qualche **DPDA** $P$, allora $L$ ha una **CFG non ambigua**.
+
+Applicando la costruzione vista da **PDA** a **CFG**, se la costruzione è applicata ad un **DPDA**, il risultato è una **CFG con Derivazioni a Sinistra Uniche per ogni Stringa**.
+
+Se $L=L(P)$ per qualche **DPDA** $P$, allora $L$ ha una **CFG non ambigua**.
+
+Sia $\$$ un simbolo fuori dell’**Alfabeto** di $L$, e sia $L' = L\{\$\}$.
+
+E’ facile modificare $P$ per riconoscere $L'$ (PDA ancora deterministico); inoltre $L'$ ha la **Proprietà del Prefisso**.
+
+Per il teorema 6.19 abbiamo $L'=N(P')$ per qualche **DPDA** $P'$.
+Per il teorema 6.20 $L'$ può essere generato da una **CFG non ambigua** $G'$.
+
+Modifichiamo $G'$ in $G$, tale che $L(G) = L$, aggiungendo la produzione
+
+$$\$ → ϵ$$
+
+(e considerando \$ una variabile anziche’ un terminale)
+
+Dato che $G'$ ha **Derivazioni a Sinistra Uniche**, anche $G$ le avrà uniche, dato che l’unica cosa nuova è l’aggiunta di derivazioni
+
+$$w\$ \underset{lm}{⇒}w$$
+
+Il $ è la nostra **EOF**
+
+fai fino a fine pdf.
+
+---
+
+# Linguaggi di Programmazione
+
+## Struttura di un compilatore
+
+1. Scanning (Analisi Lessicale)
+2. Parsing (Analisi Sintattica)
+3. Type checking (Analisi Semantica)
+4. Ottimizzazione
+5. Generaizone di Codice
+
+![alt text](image-16.png)
+
+### Analisi Lessicale (Lexical Analysis)
+
+Il **Compilatore** prende il testo del programma, cioè solo una sequenza di caratteri, e lo divide in **token**, come parole chiave, nomi di variabili, numeri, simboli.
+
+Esempio:
+`if x == y then z = 1; else z = 2;`
+Questo diventa:
+`IF | ID(x) | == | ID(y) | THEN | ID(z) | = | 1 | ; | ELSE | …`
+
+Gli obbiettivi finali di questa fase sono:
+- Suddividere le stringhe di input in delle sottostringhe dette **Lessemi**
+- Classificare i **Lessemi** in base al loro **Ruolo**, detto anche **Token**
+
+Alcuni **Token** possono avere anche degli attributi come il **Lessema** o il suo **Numero di Linea**.
+
+### Analisi Sintattica (Parsing)
+
+Una volta ottenuti i token, bisogna capire **se sono disposti in modo corretto**, cioè secondo la grammatica del linguaggio, questo è compito del **parser**.
+
+L’analisi sintattica costruisce una struttura ad albero:
+- **Parse Tree** (albero della grammatica concreta)
+- **AST – Abstract Syntax Tree**, versione semplificata usata per le fasi successive.
+
+## Lexer
+
+### Come creare un Lexer
+
+Scrivere un Lexer a mano è possibile, ma diventa complicato ed è prono ad errori.
+
+Per questo esistono strumenti di generazioni che forniti **Lessemi** e **Token** ci ritorna un **Lexer**.
+
+### Lexer Dichiarativo
+
+Un **Lexer Dichiarativo** è composto da 2 parti, la parte **Dichiarativa**, descrive ogni **Token** come un **Automa Finito** o un'**Espressione Regolare**, e una **Imperativa**, connette gli **Automi** precedenti in un **Automa Lexer**.
+
+## Parser
+
+Un **Parser** si occupa di due task:
+- **Controllo Sintatttico**, un programma con degli Errori Sintattici viene rifiutato e vengono fornite informazioni riguardo all'errore
+- **Parsare la Costruzione dell'Albero**
+
+### Parser a Discesa Ricorsiva
+
+Sono dei **Parser** che sfruttano la **Ricorsione** per ottenere l'**Albero di Derivazione**.
+
+Partano dal **Primo Elemento Non Terminale della Grammatica** e procedono in maniera **Ricorsiva**, supponendo che il **Carattere Terminatore** $\$$ sia posto al **Termine della Stringa di Input**
+
+Il **Parsing** ha **Successo** se, alla fine dell'esecuzione, l'ultimo elemento punta a $\$$.
+
+***Facile da realizzare ma non sempre funzionante.***
+
+### Parser Predittivi
+
+Sono un'**alternativa più efficente** ai normali **Parser Ricorsivi**, si basano sull'abilità del **Parser** di "**Predire**" le **successive Operazioni** che quest'ultimo deve compiere, **senza effettuare Backtracking**.
+
+I Parser Predittivi accettano le **Grammatiche LL(k)**, ovvero le grammatiche che leggono da **Sinistra a Destra** (“left-to-right”) con **Derivazione a Sinistra** che predicono i **primi $k$ elementi**.
+
+LEGGI LE SLIDE
+
+---
+
+# Analisi Semantica
 
 ## 

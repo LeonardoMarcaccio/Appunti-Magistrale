@@ -1,0 +1,81 @@
+V={S} U {[q X q']| q,q'\in Q e X \in \Gamma}
+
+cioe':
+
+V={S} U {G[q0 0 q0],G[q0 0 q1],N[q1 0 q0],G[q1 0 q1],
+         G[q0 1 q0],[q0 1 q1],N[q1 1 q0],N[q1 1 q1],  
+          [q0 Z q0],G[q0 Z q1],N[q1 Z q0],G[q1 Z q1]}
+
+ANALISI DEI GENERANTI
+N = NON HA PROD quindi ovviamente non generante 
+G = GENERANTE
+
+-----
+
+S -> [q0 Z q0] | G[q0 Z q1]
+
+---- transizioni di q0
+
+1.
+
+[q0 Z r_2] -> 1 [q0  1  r_1] [r_1  Z  r_2]  per ogni r_1, r_2 \in Q
+
+cioe':
+
+[q0 Z q0] ->  1 G[q0  1  q0] [q0  Z  q0] |      r_1 = q0,   r_2 = q0 
+              1 [q0  1  q1]  N[q1  Z  q0]       r_1 = q1,   r_2 = q0 
+G[q0 Z q1] ->  1 G[q0  1  q0] G[q0  Z  q1] |     r_1 = q0,   r_2 = q1 
+               1 [q0  1  q1] G[q1  Z  q1]        r_1 = q1,   r_2 = q1 
+
+2.
+
+G[q0 1 q0] -> 0 
+
+3. 
+
+G[q0 0 q0] -> 1
+
+4. ho le produzioni [q0 1 r_2] -> 1[q0 1 r_1][r_1 1 r_2] PER OGNI r_1,r_2, quindi:
+
+G[q0 1 q0]-> 1 G[q0 1 q0]G[q0 1 q0] |
+             1 [q0 1 q1] N[q1 1 q0]
+[q0 1 q1]-> 1 G[q0 1 q0][q0 1 q1] |
+            1 [q0 1 q1] N[q1 1 q1]
+
+5. ho le produzioni [q0 0 r_2] -> 0[q0 0 r_1][r_1 0 r_2] PER OGNI r_1,r_2
+
+G[q0 0 q0] -> 0 G[q0 0 q0] G[q0 0 q0] | 
+              0 G[q0 0 q1] N[q1 0 q0]
+G[q0 0 q1] -> 0 G[q0 0 q0] G[q0 0 q1] | 
+              0 G[q0 0 q1] G[q1 0 q1]
+
+
+6. ho le produzioni [q0 Z r_2] -> 0[q0 0 r_1][r_1 Z r_2] PER OGNI r_1,r_2
+
+[q0 Z q0] -> 0 G[q0 0 q0] [q0 Z q0] |
+             0 G[q0 0 q1] N[q1 Z q0] 
+G[q0 Z q1] -> 0 G[q0 0 q0] G[q0 Z q1]
+              0 G[q0 0 q1] G[q1 Z q1] 
+
+7. ho le produzioni [q0 Z r_1] -> [q1 Z r_1] PER OGNI r_1 \in Q
+
+[q0 Z q0] -> N[q1 Z q0]
+G[q0 Z q1] -> G[q1 Z q1]
+
+8. ho le produzioni [q0 0 r_1] -> [q1 0 r_1] PER OGNI r_1 \in Q
+
+[q0 0 q0] -> N[q1 0 q0]
+G[q0 0 q1] -> G[q1 0 q1]
+
+----  transizioni di q1
+
+1. 
+
+G[q1 Z q1] -> \epsilon
+
+2. 
+
+G[q1 0 q1] -> \epsilon
+
+
+

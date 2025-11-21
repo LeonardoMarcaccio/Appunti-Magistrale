@@ -1,0 +1,164 @@
+Correzione esercizi per casa
+
+1) Dire qual'è il linguaggio riconosciuto (per stato finale) dal PDA "esercizio7.jff". 
+ 
+2) Applicare la trasformazione standard per costruire una CFG a partire dal PDA esercizio6.jff (che riconosce **per pila vuota**) e rinominare le variabili che sono triple in variabili A,B,C... etc.
+
+-------------------------------
+
+ESERCIZI SU PUMPING LEMMA PER LINGUAGGI LIBERI
+
+1. Dimostrare con il pumping lemma dei linguaggi liberi che a^mb^mc^m non è libero dal contesto.
+
+2. Dimostrare con il pumping lemma dei linguaggi liberi che il linguaggio delle stringhe su alfabeto {a,b,c} che hanno stesso numero di "a", "b" e "c" non è libero dal contesto.
+
+3. Dimostrare con il pumping lemma dei linguaggi liberi che il linguaggio delle stringhe su alfabeto {a,b,c} tali che il numero di "a" e' minore del numero di "b" ed il numero di "b" e' uguale al numero di "c" non è libero dal contesto.
+
+4. Dimostrare con il pumping lemma dei linguaggi liberi che il linguaggio delle stringhe su alfabeto {a,b,c} tali che il numero di "a" e' minore del numero di "b" ed il numero di "b" e' minore del numero di "c" non è libero dal contesto.
+
+ESERCIZI DI CLASSIFICAZIONE
+
+5. Dire se il linguaggio ww, con w stringa su alfabeto {0,1} è, o meno, libero dal contesto e dimostrare la propria affermazione.
+
+6. Considerare il linguaggio L delle stringhe su alfabeto {a,b} per cui il numero delle "a" è diverso dal numero delle "b". L è un linguaggio libero? In caso affermativo mostrare un automa a pila che lo riconosca per stato finale; altrimenti mostrare che non è libero con il pumping lemma dei liberi.
+
+-----------------------------------------------------------------------------
+REALIZZAZIONE DI UN LEXER CON ANTLR4 (SimpleExp.g4)
+-----------------------------------------------------------------------------
+
+1) Realizziamo, con ANTLR4, un lexer che includa i seguenti token
+(in ordine di priorità, da quello a priorità più alta a quello a prorità
+più bassa):
+
+PLUS    associato ai lessemi: la sola stringa '+'
+TIMES   associato ai lessemi: la sola stringa '*'
+LPAR    associato ai lessemi: la sola stringa '('
+RPAR    associato ai lessemi: la sola stringa ')'
+NUM     associato ai lessemi: la stringa '0' oppure una stringa composta da 
+           una cifra tra '1' e '9' seguita da 
+           una qualsiasi quantità (anche nessuna) di cifre tra '0' e '9'
+
+WHITESP associato ai lessemi: una stringa composta da una qualsiasi 
+           quantità (almeno uno) di caratteri ' ', '\t', '\n' oppure '\r'
+
+ERR     associato ai lessemi: stringhe formate da un carattere qualsiasi
+
+dove i token WHITESP ed ERR non devono essere inviati al parser;
+ed il token ERR corrisponde ad una condizione di errore (gli errori devono
+essere contati e segnalati all'utente).
+
+2) Aggiungiamo al nostro lexer il seguente token "problematico"
+
+COMMENT associato ai lessemi: una stringa che inizia con '/*', contiene
+           una qualsiasi quantità (anche nessuna) di caratteri qualsiasi,
+           e termina con '*/'
+
+Nel realizzare la specifica per il lexer, fare attenzione alla regola di 
+maximal-match, che viene applicata per default da ANTLR.
+
+-----------------------------------------------------------------------------
+REALIZZAZIONE DI UN PARSER CON ANTLR4 (SimpleExp.g4)
+-----------------------------------------------------------------------------
+
+Realizziamo, con ANTLR4, un parser per la grammatica delle espressioni
+con operatori + e * vista a lezione. 
+ANTLR4 (a differenza di versioni precedenti/altri parser top-down) consente 
+di utilizzare grammatiche ambigue come 
+
+E -> E+E | E*E | (E) | n
+
+dichiarando esplicitamente priorità e associatività per i vari operatori (che 
+determinano un unico albero sintattico tra i vari possibili per una stringa). 
+
+Ciò rende possibile usare la grammatica in ANTLR senza bisogno di disambiguarla 
+introducendo le variabili T e F come abbiamo fatto a lezione.
+
+Data una stringa corretta, quindi, ANTLR4 produce un unico albero sintattico 
+(tenendo conto delle regole di priorità/associatività specificate)
+senza generare le catene di figli come E-T-F-n.
+
+PRIORITA' 
+ordine in cui sono scritte le produzioni di una variabile:
+la prima produzione ha la priorità più alta
+(quindi scriveremo per prima quella dell'operatore "*")
+
+ASSOCIATIVITA'
+per ogni produzione (operatore) si ha associatività: 
+- a destra, se si specifica <assoc=right> prima del corpo della produzione; 
+- a sinistra, se non si specifica nulla (associatività a sinistra è default)
+
+1) Inseriamo la grammatica sopra in ANTLR4 (file SimpleExp.g4) dando:
+priorità al "*" e associatività a sinistra ad entrambi gli operatori. 
+Affinchè ANTLR4 effettui interamente il parsing del file in input dobbiamo 
+aggiungere il token speciale EOF alla grammatica.
+
+2) Creiamo un main file "Test.java" (di cui vi viene dato un file iniziale) 
+che ci consenta di testare il parser/lexer generato automaticamente da ANTLR4 
+(facendo tasto destro sul file .g4 -> generate ANTLR recognizer)
+con il testo nel file "prova.txt" come input. 
+
+ESEMPIO: 
+3+(4+2+7)*5 con eventuali spazi/commenti ed errori lessicali e sintattici
+
+3) Mostriamo come sarebbe banale modificare SimpleExp.g4 in caso volessimo,
+invece, la associatività a destra per entrambi gli operatori.
+
+-----------------------------------------------------------------------------
+VISITA DEL SYNTAX TREE TRAMITE VISITOR PATTERN: CALCOLO RISULTATO ESPRESSIONE
+-----------------------------------------------------------------------------
+
+Possiamo calcolare il risultato di una espressione visitando il relativo albero 
+sintattico, che ANTLR4 genera esplicitamente come un albero di oggetti 
+(facendo preliminarmente tasto destro sul file .g4 -> CONFIGURE ANTLR... ->
+spunta su "generate parse tree visitor"). 
+Ogni nodo interno dell'albero è di classe "XxxContext" dove "xxx" è il nome di 
+una variabile della grammatica (l'iniziale è resa maiuscola). 
+
+In ANTLR4, inoltre, è possibile dare un nome a ciascuna produzione di una 
+variabile (es. "exp") tramite un tag #nome. 
+
+1) Consideriamo la grammatica SimpleExp.g4 e diamo un nome a ciascuna 
+produzione della variabile "exp" (usiamo "expProd1" per la prima produzione, 
+"expProd2" per la seconda, ecc...). 
+La variabile iniziale "prog" ha un'unica produzione, quindi non è necessario dare 
+nomi alle sue produzioni per identificarle.
+
+Come sappiamo ogni nodo interno di un albero sintattico è etichettato con il 
+nome di una variabile, es. "exp", ed ha come figli i simboli del corpo di una 
+produzione di quella variabile, es. la produzione di nome "expProd1". 
+Nell'albero di oggetti che ANTLR4 produce tale nodo interno sarà di classe
+effettiva "ExpProd1Context", sottoclasse di "ExpContext" (si veda il file immagine 
+"esempio albero ANTLR").
+
+2) Costruiamo una classe visitor "SimpleCalcSTVisitor.java" (di cui viene dato un 
+file di partenza) per calcolare il risultato delle espressioni. La classe 
+eredita dalla classe, generata automaticamente da ANTLR4, di nome 
+SimpleExpBaseVisitor<E> dove abbiamo scelto Integer come parametro "E" in 
+quanto la visità ritorna un numero intero (il risultato di una espressione). 
+ESEMPIO: 3+(4+2+7)*5
+
+3) Dotiamo le stampe effettuate durante la visita di indentazione in modo da visualizzare  l'albero sintattico generato automaticamente da ANTLR4. 
+
+-----------------
+ESERCIZI PER CASA
+-----------------
+
+1) Si consideri il linguaggio L delle stringhe su alfabeto {a,b,c} per cui non vale che il numero delle "a", delle "b" e delle "c" è lo stesso (vi sono almeno due tra "a", "b" e "c" per cui la quantità delle une è diversa dalla quantità delle altre). Dire se il linguaggio L è, o meno, libero dal contesto e dimostrare la propria affermazione. Qual'è il liguaggio complementare di L?
+
+SI
+abcc
+aabcc
+aabbbcccc
+aabccc
+
+NO
+\epsilon
+abc
+
+2) Provare a sostituire, in SimpleExp.g4 e in SimpleCalcSTVisitor.java, 
+l'operatore "+" con l'operatore "-" e confrontare il risultato ottenuto impostando 
+l'associativita' a destra con quella a sinistra. 
+ESEMPIO: 3-(4-2-7)*5
+
+
+

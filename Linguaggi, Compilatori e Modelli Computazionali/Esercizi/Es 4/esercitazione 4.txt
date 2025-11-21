@@ -1,0 +1,80 @@
+Esercizi per casa.
+
+PER CASA
+
+Si consideri il linguaggio su alfabeto {(,)} delle stringhe generate dalla
+CFG
+S -> SS | (S) | ()
+Dire se tale CFG è ambigua o meno. In caso affermativo mostrare una stringa generata dalla CFG che abbia (almeno) due alberi sitattici/derivazioni canoniche sinistre. Mostrare tali alberi sintattici e le corrispondenti derivazioni canoniche sinistre.
+Mostrare inoltre le corrispondenti derivazioni canoniche destre.
+
+-------
+
+------------------------------------------------------
+Creazione IntelliJ global library antlr-runtime-4.x.y
+------------------------------------------------------
+
+Andare su File-->project structure-->global libraries
+Cliccare su "+"
+Selezionare "java"
+Andare in "C:\LCMC\" (o comunque dove avete messo il .jar di antlr) e selezionare "antlr-runtime-4.x.y.jar"
+
+-----------------------
+Creazione progetto Java
+-----------------------
+
+Cliccare new project
+Scegliere Java
+(per questo test di funzionamento chiamare il progetto "Test") 
+
+------------------------------------------------------------------
+Aggiungere global library antlr-runtime-4.x.y ad un progetto Java
+------------------------------------------------------------------
+
+Andare su File-->project structure-->modules
+Andare nel tab Dependencies
+Cliccare su "+" (nella parte bassa del tab)
+Selezionare "Library" e poi "antlr-runtime-4.x.y" e fare ok
+
+---------------------
+Test di funzionamento
+---------------------
+ 
+Creare dentro la cartella "src" il package "test"
+Copiare i file Test.java e Test.g4 dentro il package "test"
+Cliccare con tasto destro su Test.g4 e effettuare "generate ANTLR recognizer" (questa operazione genererà una cartella chiamata "gen")
+Cliccare con tasto destro su "gen", aprire il end di "Mark Directory as" e selezionare "Source Root"
+Controllare che il progetto non presenti errori
+
+-------
+1. Definire un automa a pila (PDA) che riconosca **per stato finale** i seguenti linguaggi sull'alfabeto {0,1}:
+a- linguaggio delle stringhe 0^n 1^n (mostrare che "0011" è riconosciuta dal PDA)
+b- linguaggio delle stringhe in cui il numero di 0 e' uguale al numero di 1
+c- linguaggio delle stringhe in cui il numero di 0 e' maggiore o uguale del numero di 1 
+
+2. Definire un PDA che riconosca **per pila vuota** il linguaggio delle stringhe binarie in cui il numero di 0 è uguale al doppio del numero di 1.
+
+3. Si consideri il PDA del punto "c" dell'esercizio 1. Applicare la trasformazione standard per costruire un PDA che riconosce lo stesso linguaggio **per pila vuota**.
+
+4. Applicare la trasformazione standard per costruire, a partire dal PDA che riconosce **per pila vuota** dell'esercizio 2, un PDA che riconosce lo stesso linguaggio **per stato finale**.
+
+5. Applicare la trasformazione standard per costruire un PDA che riconosce **per pila vuota** a partire dalla CFG del file "CFG_5.jff" (che genera il linguaggio delle stringhe a^n b^m c^p in cui n <= m+p, fatta all'esercitazione scorsa).
+Considerare la stringa "aabc". Mostrare:
+- una derivazione canonica sinistra (lm) di tale stringa con la CFG
+- la sequenza di passaggi di configurazione (descrizioni istantanee) che portano
+il PDA a riconoscere tale stringa
+
+6. Applicare la trasformazione standard per costruire una CFG a partire dal PDA esercizio6.jff (che riconosce **per pila vuota**) 
+
+7. Dire se il PDA "esercizio7.jff" è un DPDA o meno.
+
+8. Si consideri il linguaggio su alfabeto {(,),[,]} delle stringhe w f(w^r) dove w è una stringa sui caratteri "(" ed "[". f è la funzione che trasforma "(" in ")" e "[" in "]" che si assume estesa a stringhe considerando f(a_1...a_n)=f(a_1)...f(a_n). Per esempio "[([])]" ed "(([()]))" sono stringhe del linguaggio. 
+- è possibile riconoscerlo **per stato finale** con un DPDA? 
+- esiste una CFG non ambigua che genera il linguaggio? (in caso affermativo mostrare una tale CFG)
+
+PER CASA
+
+1) Dire qual'è il linguaggio riconosciuto (per stato finale) dal PDA "esercizio7.jff". 
+
+2) Finire di risolvere l'esercizio 6. Una volta fatto l'esercizio, rinominare inoltre le variabili che sono triple in variabili A,B,C... etc.
+

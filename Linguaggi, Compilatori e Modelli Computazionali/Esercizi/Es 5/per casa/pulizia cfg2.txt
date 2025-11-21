@@ -1,0 +1,46 @@
+V={S} U {G[q0 0 q0]->A,G[q0 0 q1]->B,N[q1 0 q0],G[q1 0 q1]->C,
+         G[q0 1 q0]->D,[q0 1 q1],N[q1 1 q0],N[q1 1 q1],  
+         [q0 Z q0],G[q0 Z q1]->E,N[q1 Z q0],G[q1 Z q1]->F}
+
+S->E
+
+1.
+
+E->1DE
+
+2.
+
+D->0
+
+3.
+
+A->1
+
+4.
+
+D->1DD
+
+5.
+
+A->0AA
+B->0AB|0BC
+
+6. 
+
+E->0AE|0BF
+
+7.
+
+E->F
+
+8.
+
+B->C
+
+---
+
+1.
+F->\epsilon
+
+2.
+C->\epsilon

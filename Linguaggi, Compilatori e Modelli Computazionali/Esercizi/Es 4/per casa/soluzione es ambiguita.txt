@@ -1,0 +1,12 @@
+La grammatica è ambigua perché, ad esempio, la stringa "()()()"
+ha due alberi sitattici/derivazioni canoniche sinistre.
+
+DER CAN SINISTRE
+
+S => SS => ()S => ()SS => ()()S => ()()()
+S => SS => SSS => ()SS => ()()S => ()()()
+
+DER CAN DESTRE
+
+S => SS => SSS => SS() => S()() => ()()()
+S => SS => S() => SS() => S()() => ()()()

@@ -1,0 +1,88 @@
+G = (V,T,P,S)
+
+V={S} U {[q X q']| q,q'\in Q e X \in \Gamma}
+cioè:
+V= { S,  
+   [q0 0 q0], [q0 0 q1], [q1 0 q0], [q1 0 q1],
+   [q0 1 q0], [q0 1 q1], [q1 1 q0], [q1 1 q1],  
+   [q0 Z q0], [q0 Z q1], [q1 Z q0], [q1 Z q1], 
+   }
+
+T= {0,1}
+
+**** PRODUZIONI P ******
+
+S->[q0 Z r] PER OGNI r \in Q,
+quindi
+
+
+S->[q0 Z q0] | [q0 Z q1]
+
+
+---- transizioni di q0
+
+TRANSIZIONE 1 (k=2)
+ho le produzioni [q0 Z r2] -> 1[q0 1 r1][r1 Z r2] PER OGNI r1,r2 \in Q, 
+quindi:
+
+                                     r1  r2
+[q0 Z q0] -> 1 [q0 1 q0] [q0 Z q0]   q0  q0
+[q0 Z q0] -> 1 [q0 1 q1] [q1 Z q0]   q1  q0
+[q0 Z q1] -> 1 [q0 1 q0] [q0 Z q1]   q0  q1
+[q0 Z q1] -> 1 [q0 1 q1] [q1 Z q1]   q1  q1
+
+
+TRANSIZIONE 2 (k=0) 
+[q0 1 q0] -> 0
+
+TRANSIZIONE 3 
+[q0 0 q0] -> 1
+
+TRANSIZIONE 4
+ho le produzioni [q0 1 r2] -> 1[q0 1 r1][r1 1 r2] PER OGNI r1,r2 \in Q
+
+[q0 1 q0]-> 1 [q0 1 q0][q0 1 q0] |
+            1 [q0 1 q1][q1 1 q0]
+[q0 1 q1]-> 1 [q0 1 q0][q0 1 q1] |
+            1 [q0 1 q1][q1 1 q1]
+
+TRANSIZIONE 5
+ho le produzioni [q0 0 r2] -> 0[q0 0 r1][r1 0 r2] PER OGNI r1,r2 \in Q
+
+[q0 0 q0] -> 0 [q0 0 q0] [q0 0 q0] | 
+             0 [q0 0 q1] [q1 0 q0]
+[q0 0 q1] -> 0 [q0 0 q0] [q0 0 q1] | 
+             0 [q0 0 q1] [q1 0 q1]
+
+TRANSIZIONE 6
+ho le produzioni [q0 Z r2] -> 0[q0 0 r1][r1 Z r2] PER OGNI r1,r2 \in Q
+
+[q0 Z q0] -> 0 [q0 0 q0] [q0 Z q0] |
+             0 [q0 0 q1] [q1 Z q0] 
+[q0 Z q1] -> 0 [q0 0 q0] [q0 Z q1] |
+             0 [q0 0 q1] [q1 Z q1] 
+
+TRANSIZIONE 7
+ho le produzioni [q0 Z r1] -> [q1 Z r1] PER OGNI r1 \in Q
+
+[q0 Z q0] -> [q1 Z q0]
+[q0 Z q1] -> [q1 Z q1]
+
+TRANSIZIONE 8
+ho le produzioni [q0 0 r1] -> [q1 0 r1] PER OGNI r1 \in Q
+
+[q0 0 q0] -> [q1 0 q0]
+[q0 0 q1] -> [q1 0 q1]
+
+----  transizioni di q1
+
+TRANSIZIONE 1
+[q1 Z q1] -> \epsilon
+
+TRANSIZIONE 2
+[q1 0 q1] -> \epsilon
+
+
+
+
+

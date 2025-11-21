@@ -1,0 +1,3 @@
+a^nb^mc^p con m+p=2n
+
+es "aabbcc", ma anche "aabbbc","aabccc","aabbbb"

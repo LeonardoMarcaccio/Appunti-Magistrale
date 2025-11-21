@@ -1,0 +1,97 @@
+-----------------------------------------------------------------------------
+CORREZIONE ESERCIZIO PER CASA
+COMPLETARE TYPE CHECKING TRAMITE VISITA DELL'ENRICHED AST PER FOOL.g4
+-----------------------------------------------------------------------------
+
+Completare la realizzazione del type checking dei programmi FOOL la cui sintassi 
+è in FOOL.g4, includendo anche la chiamata di funzioni (nodo CallNode).
+
+1) Modificare TypeCheckEASTVisitor.java realizzando il codice per la visita di 
+CallNode che implementi la regola di type checking per le chiamate di funzioni
+(con subtyping) vista a lezione. 
+In particolare il codice deve seguire i seguenti passi:
+- recupero tipo (che mi aspetto essere ArrowTypeNode) da STentry
+- errori possibili (che indicano, in ordine, i controlli da fare):
+     Invocation of a non-function [id del CallNode]
+     Wrong number of parameters in the invocation of [id del CallNode]
+     Wrong type for ...-th parameter in the invocation of [id del CallNode]
+- dopo i check restituisco il tipo di ritorno della funzione
+CONSEGNA: TypeCheckEASTVisitor.java
+
+2) Testare il codice creato con l'esempio in "esempio.fool" e provare a fare 
+piccole modifiche per mostrare gli errori ("esempio.fool" non deve dare errori 
+e l'output deve indicare che la main program expression è IntType).
+
+-----------------------------------------------------------------------------
+REALIZZAZIONE DELLA STACK VIRTUAL MACHINE (SVM) E DEL RELATIVO ASSEMBLATORE
+-----------------------------------------------------------------------------
+
+Realizziamo una Stack Virtual Machine (SVM) e il relativo assemblatore.
+Esempio: compilazione ed esecuzione file sorgente quicksort.fool
+
+             compilatore                        assembler
+quicksort.fool --------> quicksort.fool.asm    ----------> codice oggetto 
+                         (assembly della SVM)                     |
+                                                                  |
+                                                                  V
+                                                           Stack Virtual Machine
+
+1) Creiamo un progetto FOOL contenente un package "svm" in cui collocare i files 
+iniziali forniti nella directory "svm" (basta copiarla dentro "src" progetto).
+
+2) Creiamo l'assemblatore SVM in SVM.g4 inserendo direttamente in fondo a ogni 
+produzione della grammatica il codice Java da eseguire. 
+
+3) Creiamo l'esecutore di codice oggetto SVM in ExecuteVM.java. 
+TestASM.java consente di assemblare ed eseguire un file ".asm".
+Lo testiamo con il file di prova "prova.asm".
+
+-----------------------------------------------------------------------------
+PREPARAZIONE PER GENERAZIONE DI CODICE E SUA ESECUZIONE TRAMITE SVM
+-----------------------------------------------------------------------------
+
+Aggiungiamo al progetto FOOL contenente il package "svm" della nostra Stack 
+Virtual Machine i files iniziali forniti nella directory "compiler". 
+
+Rispetto alla versione del compilatore che abbiamo sviluppato all'ultimo 
+laboratorio (estesa dall'esercizio per oggi) è stato introdotto: 
+un metodo ausiliario ckvisit(t) da utilizzare quando si leggono tipi t in 
+campi dell'EAST, che lancia la visita su t (per controllarne la completezza e 
+stamparlo in caso di debug) e torna t stesso.
+
+Il codice in fondo a Test.java nella directory "compiler" esegue il 
+CodeGenerationASTVisitor (che realizzeremo, per ora viene fornito uno scheletro) 
+e poi serializza il contenuto della stringa generata in un file di testo con 
+estensione ".asm". 
+Si noti che il CodeGenerationASTVisitor viene eseguito solo se il front-end
+del compilatore non dà errori: non dobbiamo quindi gestire EAST incompleti. 
+
+1) Rendiamo "public" i campi "lexicalErrors" del lexer e "code" del parser in 
+SVM.g4 in modo che possano essere acceduti dal Test.java del package compiler.
+
+-----------------------------------------------------------------------------
+ESERCIZIO: 
+COMPLETARE IMPLEMENTAZIONE VIRTUAL MACHINE PER GRAMMATICA IN SVM.g4
+-----------------------------------------------------------------------------
+
+Completare l'implementazione della Virtual Machine considerando l'intera 
+grammatica SVM.g4 (terminando tutte le operazioni).
+
+Sono previsti i seguenti registri interni
+HP (heap pointer)
+FP (frame pointer)
+RA (return address)
+TM (temporary storage)
+da implementare come campi analogmente ai registri IP e SP.
+
+Inizialmente il registro FP deve avere lo stesso valore di SP mentre HP 
+deve essere inizializzato a 0.
+
+Come test, provare il file "quicksort.fool.asm" che deve stampare:
+1
+2
+2
+3
+4
+5
+

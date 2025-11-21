@@ -1,0 +1,209 @@
+==================================================================================
+
+Esercizio 1
+
+==================================================================================
+
+Sappiamo dall'esercizio svolto in laboratorio che il PDA in considerazione è Determministico.
+Questo perchè:
+"Tutte le sue Descrizioni Instantanee implicano al più un passaggio di stato e non esistono Transizioni che, fornito un Simbolo del Linguaggio o Epsilon e provenienti dallo stesso Stato, abbiano lo stesso simbolo di pila X".
+
+Questo ci implica che in ogni configurazione il comportamento del PDA sia Univocamente Determinato.
+
+(q0, a, Z) = (q0, AAZ)
+(q0, a, A) = (q0, AAA)
+(q0, Eps, Z) = (q1, Z)
+(q0, Eps, A) = (q1, A)
+(q1, b, A) = (q1, Eps)
+(q1, Eps, Z) = (q2, Z)
+(q1, Eps, A) = (q2, A)
+(q2, c, A) = (q2, Eps)
+(q2, Eps, Z) = (q3, Z)
+
+L = {(a^m)(b^n)(c^o) | 2m = n+o)}
+
+Questo poichè per poter arrivare allo stato finale il nostro sistema necessita di dover "mangiare" ogni elemento della stringa fornita e di trovarsi, una volta letta la stringa, in uno stato di accettazzione.
+
+Guardando gli stati q1 e q2, possiamo notare che contengono le uniche Descrizioni Instantanee che utilizzano i caratteri "b" e "c", ma queste Descrizioni di tipo "Pop", ovvero che consumano lo stack senza fornire nulla di nuovo all'automa.
+
+Le uniche stringe che vengono accettate dal nostro linguaggio sono quelle che contengono solo "a", la stringa vuota e un'altro tipo particolare di stringa ovvero quelle che contengono per ogni "a" almeno altri 2 caratteri tra "b" e "c".
+
+Questo perchè tutte le Descrizioni Instantane del nostro automa che prendo in input una "a", aggiungono alla pila 2 simboli "A" garantendoci che al nostro sitema un numero di "b" e/o "c" uguale del doppio delle "a".
+
+==================================================================================
+
+Esercizio 2
+
+==================================================================================
+
+(q0, 0, Z) = (q0, 0Z)
+(q0, 0, 0) = (q0, 00)
+(q0, 1, 1) = (q0, 11)
+(q0, 1, 0) = (q0, eps)
+(q0, 0, 1) = (q0, eps)
+(q0, 1, Z) = (q0, 1Z)
+
+(q0, eps, 0) = (q1, 0)
+(q0, eps, Z) = (q1, Z)
+
+(q1, eps, Z) = (q1, eps)
+(q1, eps, 0) = (q1, eps)
+
+(q, X, p) => X(q0, Y, p0)(p0, Y1, p1)...(pk-1, Yk, pk)
+
+TRANSIZIONE 1 (q0,1,Z)=(q0,1Z)
+
+a=1, X=Z, q=q0, k=2, Y={1,K}
+
+[q0,Z,p]:
+	-> 1[q0,1,q0][q0,Z,q0]
+	-> 1[q0,1,q1][q1,Z,q0]
+	-> 1[q0,1,q0][q0,Z,q1]
+	-> 1[q0,1,q1][q0,Z,q1]
+
+TRANSIZIONE 2 (q0,0,Z)=(q0,0Z)
+
+a=0, X=Z, q=q0, k=2, Y={0,K}
+
+[q0,Z,p]:
+	-> 0[q0,0,q0][q0,Z,q0]
+	-> 0[q0,0,q1][q1,Z,q0]
+	-> 0[q0,0,q0][q0,Z,q1]
+	-> 0[q0,0,q1][q0,Z,q1]
+
+TRANSIZIONE 3 (q0,1,1)=(q0,11)
+
+a=1, X=1, q=q0, k=2, Y={1,1}
+
+[q0,1,p]:
+	-> 1[q0,1,q0][q0,1,q0]
+	-> 1[q0,1,q1][q1,1,q0]
+	-> 1[q0,1,q0][q0,1,q1]
+	-> 1[q0,1,q1][q0,1,q1]
+
+TRANSIZIONE 4 (q0,0,0)=(q0,00)
+
+a=0, X=0, q=q0, k=2, Y={0,0}
+
+[q0,0,p]:
+	-> 0[q0,0,q0][q0,0,q0]
+	-> 0[q0,0,q1][q1,0,q0]
+	-> 0[q0,0,q0][q0,0,q1]
+	-> 0[q0,0,q1][q0,0,q1]
+
+TRANSIZIONE 5 (q0,0,1)=(q0,eps)
+
+a=0, X=1, q=q0, k=0
+
+[q0,1,q0]:
+	-> [q0,1,q0] = 0
+
+TRANSIZIONE 6 (q0,0,1)=(q0,eps)
+
+a=1, X=0, q=q0, k=0
+
+[q0,0,q0]:
+	-> [q0,0,q0] = 1
+
+TRANSIZIONE 7 (q0,eps,0)=(q1,0)
+
+a=eps, X=0, q=q0, k=1
+
+[q0,0,q]:
+	-> [q1,0,q0]
+	-> [q1,0,q1]
+
+TRANSIZIONE 8 (q0,eps,Z)=(q1,Z)
+
+a=eps, X=Z, q=q0, k=1
+
+[q0,Z,p]:
+	-> [q1,Z,q0]
+	-> [q1,Z,q1]
+
+TRANSIZIONE 9 (q1,eps,0)=(q1,eps)
+
+a=eps, X=0, q=q1, k=0
+
+[q1,Z,p]:
+	-> [q1,0,q1] = eps
+
+TRANSIZIONE 10 (q1,eps,Z)=(q1,eps)
+
+a=eps, X=0, q=q1, k=0
+
+[q1,Z,p]:
+	-> [q1,Z,q1] = eps
+
+V = {
+	A  = [q0, Z, q0]
+	B  = [q0, Z, q1]
+	C  = [q0, 0, q0]
+	D  = [q0, 0, q1]
+	E  = [q0, 1, q0]
+	F  = [q0, 1, q1]
+	G  = [q1, Z, q0]
+	H  = [q1, Z, q1]
+	I  = [q1, 0, q0]
+	J  = [q1, 0, q1]
+	K  = [q1, 1, q0]
+	L  = [q1, 1, q1]
+}
+
+T = {eps, 0, 1}
+
+P = {
+	A → 1EA | 1FG | 0CA | 0DG | G
+	B → 1EB | 1FH | 0CB | 0DH | H
+	C → 1 | 0 CC | 0DI | I
+	D → 0CD | 0DJ | J
+	E → 0 | 1EE | 1FK
+	F → 1EF | 1FL
+	G → (nessuna produzione diretta generata dalle transizioni elencate)
+	H → eps
+	I → (nessuna produzione diretta generata)
+	J → eps
+	K → (nessuna produzione diretta generata)
+	L → (nessuna produzione diretta generata)
+}
+
+
+Le Variabili G, I, K, ed L non hanno produzioni terminali: compaiono solo come intermedi.
+
+Questo non è un problema ma significa che nella grammatica completa alcune di esse potrebbero essere inutili, non raggiungibili o non produttive.
+
+Usando l’algoritmo standard di rimozione delle variabili inutili si pulisce la grammatica.
+
+Raffinandola otterremo:
+
+P = {
+	A → 1EA | 0CA
+	B → 1EB | 0CB | 0D | ε
+	C → 1 | 0CC | 0D
+	D → 0CD | 0C | 0 | ε
+	E → 0 | 1EE
+	F → 1EF
+	H → ε
+	J → ε
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
