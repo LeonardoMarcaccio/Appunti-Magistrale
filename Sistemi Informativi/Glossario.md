@@ -1034,8 +1034,79 @@ Quasi nessuno fa **Tutto in Casa** e l'**Affidamento Totale** all'esterno è rar
 
 In base alla missione affidata al Fornitore
 - **Information Technology Outsourcing** (ITO) = Outsourcing delle attività di sviluppo, esercizio, manutenzione dei **Sistemi Informativi** e delle **Risorse Informatiche**.
-- **Business Process Outsourcing**
+- **Business Process Outsourcing** = Outsourcing di **Processi Operativi** dell’organizzazione, di solito **Strumentali** e **Non-Core**. (Call-Center)
 
 In base all’ampiezza del mandato conferito al Fornitore
-- **Full Outsourcing**
-- **Selective Outsourcing** (Multisourcing)
+- **Full Outsourcing** = Tutto da un singolo fornitore
+- **Selective Outsourcing** o **Multisourcing**
+
+## Tipi di Sourcing
+
+- **Insourcing**:
+  - Attività di creazione di un'**Azienda Captive**, ovvero una **Società di Servizi Separata dall’Organizzazione** che però **Fornisce Servizi** all'azienda principale ed è da essa **Posseduta**.
+  - Solitamente poi inglobate nell'**Azienda Capogruppo**.
+- **Selective Outsourcing**:
+  - Si delegata a **Più Fornitori Esterni** che forniscono ed implementano **Nuovi Servizi ed Architetture IT** sulla base di più **Contratti di Durata Limitata**.
+  - Questo sistema creara un **Ambiente Competitivo** (Costi, Capacità e Innovazione), aumentando però la **Complessità Gestionale**.
+  - Scarica Barile di responsabilità
+- **Full Outsourcing**:
+  - Si delega ad un **Unico Fornitore Esterno** fornisce ed implementa nuovi **Nuovi Servizi ed Architetture IT** sulla base di un **Unico Contratto di Servizio Duraturo**.
+  - Può causare fenomeni di **Lock-In**.
+- **Joint Venture**:
+  - Si delega ad una **Società di Servizi Separata e Indipendente** dall’organizzazione a cui fornisce servizi, in **Partecipazione con un Fornitore**
+  - La maggioranza delle quote dipende in base a chi il **Controllo del Committente** o la **Responsabilità** e l'**Impegno del Fornitore**.
+- **Consorzi e RTI (Raggruppamento Temporaneo d'Impresa)**:
+  - Si delega ad un **Consorzio Stabile** o **Temporaneo** costituito da **Più Fornitori Esterni**
+  - Unico contratto di servizio
+  - Relegato al **Singolo Progetto**
+
+## Outsourcing: Pro e Contro
+
+- **Pro**
+  - Attenzione al core-business
+  - Mancanza di risorse specializzate
+  - Riduzione dei tempi
+  - Maggiore flessibilità nell'offerta di servizi
+  - Riduzione di costi
+- **Contro**
+  - Perdita di controllo
+  - Riduzione del potere negoziale a medio termine
+  - Demotivazione personale IT interno
+
+## Compiti e Responsabilità Funzione IT
+
+- Progettazione
+- Pianificazione e Controllo
+- Relazione con gli utenti
+- Osservatorio sul mercato dell’IT
+- Gestione dei progetti (Project Management)
+- Gestione delle banche dati (Data Administration & Data Architect)
+- Gestione della sicurezza (Security Management)
+
+## Fattori Chiave di Successo
+
+- Scelta della Strategia di Sourcing
+- Selezione del Fornitore
+- Definizione del Contratto
+- Governo del Contratto
+
+## Strategie di realizzazione di SW Applicativo
+
+Le necessità che portano alla realizzazone un **Software Applicativo** sono:
+- Nuove **Esigenze di Automazione di Processi**
+  - Sviluppo di **Programmi Ad Hoc**
+  - **Riuso di Programmi** ad hoc sviluppati per altre PA
+  - Utilizzo di **Sistemi Informatici Proprietari** con ricorso a licenza d’uso
+  - Utilizzo di **sistemi Informatici Open Source**
+  - Combinazione dei punti precedenti
+- **Adeguamento di applicazioni esistenti**:
+  - **MAC** o **Manutenzione Correttiva** = Vengono trovati errori o problematiche e le devo correggere.
+  - **MEV** o **Manutenzione Evolutiva** = Avviene un cambiamento e devo adattare l'applicativo.
+
+### Il problema dell'Open Source
+
+- Ridotta compatibilità con standard commerciali (Office VS Libre)
+- Supporto non sempre disponibile
+- Instabilità di mercato e potenziale mancanza di una evoluzione del sistema nel tempo
+
+
