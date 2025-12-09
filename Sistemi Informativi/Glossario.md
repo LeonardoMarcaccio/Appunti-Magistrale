@@ -37,6 +37,16 @@ Un insieme delle Attività tra loro interconnesse, finalizzate alla realizzazion
 
 ***Efficacia*** = Aspettative vs Realtà.
 
+# Sistemi Informativi VS Basi di Dati
+
+I concetti di **Sistemi Informativo** e di **DB** non devono essere considerati dei sinonimi.
+
+La definizione e la gestione di un **Sistemi Informativo** richiede la perfetta conoscenza dei **Processi Aziendali**, **Informazioni necessarie ai Processi** e la **Struttura Aziendale**.
+
+Mentre per progettare un **Sistemi Informativi** richiede competenze in ambito di **Organizzazione Aziendale**, **Economia** e **Psicologia**.
+
+I **DB** sono quindi solo una **sottoporzione** del **Sistemi Informativo** atta alla **memorizzazione strutturata delle informazioni**, essendo queste il nucleo di tutti i **Sistemi Informativi** i **DB** rivestono un ruolo centrale. Dunque una **modellazione imprecisa** del **DB** implica lo **scorretto funzionamento** del **Sistemi Informativo**.
+
 # Evoluzione dei Sistemi Informatici
 
 ## Fase I - Automazione
@@ -50,16 +60,6 @@ Automazione delle attività di **controllo** e **valutazione dell’andamento az
 ## Fase III - Integrazione
 
 **Integrazione** con le **Applicazioni Settoriali**.
-
-# Sistemi Informativi VS Basi di Dati
-
-I concetti di **Sistemi Informativo** e di **DB** non devono essere considerati dei sinonimi.
-
-La definizione e la gestione di un **Sistemi Informativo** richiede la perfetta conoscenza dei **Processi Aziendali**, **Informazioni necessarie ai Processi** e la **Struttura Aziendale**.
-
-Mentre per progettare un **Sistemi Informativi** richiede competenze in ambito di **Organizzazione Aziendale**, **Economia** e **Psicologia**.
-
-I **DB** sono quindi solo una **sottoporzione** del **Sistemi Informativo** atta alla **memorizzazione strutturata delle informazioni**, essendo queste il nucleo di tutti i **Sistemi Informativi** i **DB** rivestono un ruolo centrale. Dunque una **modellazione imprecisa** del **DB** implica lo **scorretto funzionamento** del **Sistemi Informativo**.
 
 # Hype Cycle di Gartner
 
@@ -158,6 +158,40 @@ Un **Concetto** per descrivere come il **Progresso Tecnologico** tenda ad **acce
 
 Questo accade perché ogni **Innovazione Tecnologica** fornisce gli strumenti per **sviluppare ulteriori innovazioni** a un ritmo sempre più rapido.
 
+# Definizione degli Obbiettivi
+
+Per raggiungere gli **obiettivi aziendali**, questi devono essere **individuati e formalizzati**, definendo **responsabilità**, **tempi** e **priorità**.
+
+A tale scopo viene redatto il **Piano di Informatizzazione**, approvato dai **livelli decisionali più alti** per garantirne la rilevanza.
+
+## Piano Strategico
+
+Di durata tipica tra i 3 e 5 anni, il suo scopo è quello di assicurare coerenza e integrazione tra le iniziative informatiche, evitando sistemi frammentati o incompatibili.
+
+## Piano Operativo
+
+Di durata annuale, il suo scopo è dettagliare gli interventi concreti previsti dal piano strategico per l’anno in corso.
+
+## Piano Strategico a Scorrimento
+
+Piano che viene formato annualmente con un orizonte degli eventi a circa 3 anni, nasce come soluzione ibrida dei due precedenti.
+
+## Top Down VS Bottom Up
+
+***Top Down***:
+
+- Partendo dagli **Obiettivi Strategici dell’Organizzazione** si definiscono le **Caratteristiche Generali del Sistema Informativo**, le **Aree di Intervento** e gli specifici **Progetti per Realizzarlo**, verificandone la **Coerenza con le Esigenze espresse** dagli uffici
+- Maggiormente **Innovativo** e **Discontinuo**.
+- Permette di **Identificare** e **Pianificare Soluzioni** che rispondono a necessità di **Mutamenti Radicali**.
+- Causa maggiori **Tensioni** e **Rischi Organizzativi**.
+
+***Bottom Up***:
+
+- Partendo dalle **Indicazioni delle diverse Unità Organizzative**, che successivamente vengono **Integrate** e **Razionalizzate**, definendo contemporaneamente le **Priorità all’interno del Budget Complessivo**.
+- Maggiormente **Conservativo**
+- Difficilmente riesce a produrre ipotesi di **Innovazione Radicale**, mirando sostanzialmente al **Miglioramento dell’Esistente**.
+- Presenta **scarsi Rischi Realizzativi**.
+
 # Il ciclo di Deming
 
 Sintetizza la **Logica** secondo la quale **gestire il Ciclo di Innovazione**.
@@ -197,36 +231,6 @@ Basi Informative** presenti, soprattutto in termini di **Correttezza**, **Comple
 - L’**Elaborazione degli Interventi di Reingegnerizzazione dei Processi di Servizio**, definendo in particolare i **Requisiti di Fondo** per lo sviluppo e la **Revisione dei Sistemi Applicativi**;
 - L’**Individuazione di Iniziative di Reingegnerizzazione dei Sistemi Informatici** che si concretizzano in **Programmi di Adeguamento** delle **Infrastrutture Informatiche**;
 
-# Definizione degli Obbiettivi
-
-Per raggiungere gli **obiettivi aziendali**, questi devono essere **individuati e formalizzati**, definendo **responsabilità**, **tempi** e **priorità**.
-
-A tale scopo viene redatto il **Piano di Informatizzazione**, approvato dai **livelli decisionali più alti** per garantirne la rilevanza.
-
-## Piano Strategico
-
-Di durata tipica tra i 3 e 5 anni, il suo scopo è quello di assicurare coerenza e integrazione tra le iniziative informatiche, evitando sistemi frammentati o incompatibili.
-
-## Piano Operativo
-
-Di durata annuale, il suo scopo è dettagliare gli interventi concreti previsti dal piano strategico per l’anno in corso.
-
-## Top Down VS Bottom Up
-
-***Top Down***:
-
-- Partendo dagli **Obiettivi Strategici dell’Organizzazione** si definiscono le **Caratteristiche Generali del Sistema Informativo**, le **Aree di Intervento** e gli specifici **Progetti per Realizzarlo**, verificandone la **Coerenza con le Esigenze espresse** dagli uffici
-- Maggiormente **Innovativo** e **Discontinuo**.
-- Permette di **Identificare** e **Pianificare Soluzioni** che rispondono a necessità di **Mutamenti Radicali**.
-- Causa maggiori **Tensioni** e **Rischi Organizzativi**.
-
-***Bottom Up***:
-
-- Partendo dalle **Indicazioni delle diverse Unità Organizzative**, che successivamente vengono **Integrate** e **Razionalizzate**, definendo contemporaneamente le **Priorità all’interno del Budget Complessivo**.
-- Maggiormente **Conservativo**
-- Difficilmente riesce a produrre ipotesi di **Innovazione Radicale**, mirando sostanzialmente al **Miglioramento dell’Esistente**.
-- Presenta **scarsi Rischi Realizzativi**.
-
 # Il BPR (Business Process Reengineering)
 
 Il **BPR**, o ***Business Process Reenginering***, nasce come completo **ripensamento** e radicale **ridisegno** dei **fondamentali Processi di un’Organizzazione** alla luce delle **Potenzialità offerte dai nuovi Strumenti Informatici**.
@@ -263,11 +267,11 @@ La **Scomposizione dei Processi** dettaglia i processi per successivi livelli di
 Le **Variabili di Progettazione** dei processi sono:
 
 - **Flusso delle Attività** = La **Sequenza di Attività** attraverso cui il **Processo** è svolto, determina la **durata** e **incide sul Livello di Servizio** in base alle sua flessibilità ed assieme alle **Risorse Umane** e al **Livello della Tecnologia** determina la **Qualità dell’Output**.
-- **Organizzazione del Processo** = Sia dal punto di vista della **Suddivisione Operativa del Lavoro**, sia della **Struttura di Coordinamento e Controllo Aziendale**, determina il **Livello di Accorpamento delle Attività**. (Il collegamento tra la struttura aziendale e i processi operativi può essere rappresentato con i Linear Responsibility Charting (LRC)).
+- **Organizzazione del Processo** = Sia dal punto di vista della **Suddivisione Operativa del Lavoro**, sia della **Struttura di Coordinamento e Controllo Aziendale**, determina il **Livello di Accorpamento delle Attività**. (Il collegamento tra la struttura aziendale e i processi operativi può essere rappresentato con i **Linear Responsibility Charting** (LRC)).
 - **Competenze delle Risorse Umane**.
 - **Sistema di Misurazione e controllo delle prestazioni** = Si ottiene realizzando sistemi di ***Key Performance Indicator*** (**KPI**) o di **Balanced Scorecard**.
 
-#### Linear Responsability Charting
+### Linear Responsability Charting
 
 Determina una **Visione Tabellare della Responsabilità Organizzativa**, si ottiene **incrociando le Attività del Processo con le Divisioni**.
 
@@ -738,15 +742,86 @@ A seguito dell’integrazione, molti **Concetti Diversi ma Correlati** verranno 
   - Possono essere di due tipi:
     - **Tecniche Ennarie**:
       - Considera **Più Schemi Contemporaneamente**.
+      - Un **Passo Singolo** o **Iterativo**
     - **Tecniche Binarie**:
       - Considera sempre **Coppie di Schemi**.
+      - A **Scala** o **Bilanciato**
       - Le tecniche binarie sono dette a scala quando i nuovi schemi sono integrati allo schema temporaneo determinato fino a quel momento.
 - **Comparazione degli Schemi**:
   - Durante questa fase gli schemi locali vengono confrontati per evidenziare i conflitti e i concetti correlati.
+  - **Conflitti di Eterogeneità**:
+    - Indicano le **Discrepanze** dovute all’utilizzo di **Formalismi Diverso** (es. E/R e UML).
+  - **Conflitti sui Nomi**:
+    - **Omonimie**: stesso termine, concetti diversi
+    - **Sinonimie**: termini diversi, stesso concetto
+  - **Conflitti Semantici**:
+    - Due schemi modellano lo **Stesso Elemento** a un diverso **Livello di Astrazione e Dettaglio**.
+  - **Conflitti Strutturali**:
+    - Causati da scelte diverse nella **Modellazione di uno Stesso Concetto** o differenti **Vincoli di Integrità**.
 - **Allineamento degli Schemi**:
-  Durante questa fase il progettista deve risolvere i conflitti precedentemente individuati.
+  - Durante questa fase il progettista deve risolvere i **Conflitti** precedentemente individuati evitando di perdere **Informazioni e Vncoli Fondamentali**, non sempre risolvibili.
 - **Fusione e ristrutturazione degli schemi**:
-  Gli schemi resi coerenti possono essere fusi a creare un unico schema globale.
+  - Gli schemi resi coerenti possono essere fusi a creare un unico schema globale.
+  - Deve basarsi sui concetti di Semplicità, Minimalità e Semplicità
+
+## Il Mapping
+
+Il **Mapping** serve per eseguire **Interrogazioni** sullo **Schema Globale** traducendole sugli **Schemi Locali**.
+
+Esistono due approcci principali:
+- **GAV** o **Global-As-View**:
+  - Ogni concetto del **Globale** è definito come **Vista sui Concetti delle Sorgenti**.
+  - Più semplice eseguire query.
+  - Scarsa **Estensibilità**, aggiungere nuove sorgenti richiede modifiche allo schema globale.
+- **LAV** o **Local-As-View**:
+  - Ogni **Sorgente** è espressa come **Vista sul Globale**.
+  - Ottima **Estensibilità** e **Manutenzione**.
+  - Richiede **Trasformazioni più Complesse** per eseguire le **Query**.
+
+## Pulizia dei Dati
+
+Con il termine **Pulizia dei Dati** si intende l’insieme delle operazioni atte a garantire la **Consistenza** e la **Correttezza** dei dati presenti nel **Livello Riconciliato**.
+
+### Basate sui Dizionari
+
+Le tecniche basate su dizionari verificano la **Correttezza dei Dati** confrontandoli con **Tabelle di Riferimento** dette **Dizionari**.
+
+Utile quando il **Dominio dei Valori è Limitato** e anche quando si integrano **Dati da Sorgenti Diverse senza una Chiave Comune**, in questi casi bisogna identificare i record corrispondenti **confrontando Campi Condivisi**, il ottenuto risultato è un **Join Approssimato**.
+
+Inoltre è utile quando due **Istanze Diverse** di uno stesso schema devono essere **Fuse Assieme** e si parla quindi di **Purge/Merge Problem**. (Es Informazioni vendita Roma Milano)
+
+### Similarità tra Record
+
+Sono tecniche basate su **Funzioni di Similarità** che comparano i vari **Valori dei Record** valutandoli in base alla loro **Punteggio di Affinità**.
+
+# Master Data Management
+
+Con il termine **Master Data** si indica l’**Insieme dei Dati** che identificano e descrivono **Elementi Fondamentali** per il business.
+
+Definiamo **Master Data Management** (MDM) l’insieme di discipline,
+tecnologie e soluzioni in grado di creare e mantenere, accurati e completi, i dati di importanza critica.
+
+Nell’ambito dell’MDM si distinguono generalmente due aree più specifiche:
+- **PIM** o **Product Information Management** -> **Master Data di Prodotto**
+- **CDI** o **Customer Data Integration** -> **Master Data relativi a Clienti/Fornitori/Utenti**
+
+## Caratteristiche dei Master Data
+
+- **Quantità**
+  - La creazione di un’architettura per la gestione dei Master Data ha senso solo per quantità elevate di informazioni.
+- **Tempo di Vita**
+  - Tendenzialmente i Master Data hanno un tempo di vita più lungo rispetto ad altri dati.
+- **Valore**
+  - maggiore è il valore di una informazione, maggiore la sua rilevanza
+- **Complessità**
+  - per dati poco complessi e poche problemi di gestione è poco utile creare un meccanismo di MDM.
+- **Riusabilità**
+  - Un concetto riutilizzato da più sistemi aziendali richiede con elevata probabilità una gestione basata su un sistema di MDM.
+- **Centralità**
+  - Master Data sono centrali a più applicazioni che li creano, li modificano, li leggono e li cancellano.
+
+
+
 
 # Ciclo di Vita di un Sistema Informatico
 
@@ -771,3 +846,143 @@ In base alla missione affidata al Fornitore
 In base all’ampiezza del mandato conferito al Fornitore
 - **Full Outsourcing**
 - **Selective Outsourcing** (Multisourcing)
+
+# Contratti
+
+## Contratto d'Appalto Art. 1655 C.C.
+
+L'**Appalto** è il contratto con il quale una parte assume con **Organizzazione** dei mezzi necessari e con **Gestione a proprio Rischio**, il compimento di una
+**Opera** o di un **Servizio** verso un corrispettivo in denaro.
+
+### Visione Manageriale (Non Burocratica)
+
+Un **Contratto** ha l’obiettivo di **Soddisfare entrambe le Parti Coinvolte**, se i risultati non vengono raggiunti, entrambi hanno fallito.
+
+Quindi un **Contratto** deve definire, in modo **Cooperativo tra le Parti**, le **Prestazioni** in termini di **Contenuti**, **Costi**, **Qualità**, **Responsabilità**.
+
+Devono essere anche **Eliminate le ambiguità**, ma non si può pretendere di "prevedere tutto" in dettaglio, si deve quindi specificare non solo **Obblighi** e **Impegni** ma anche **Procedure** e **Regole di Relazione**.
+
+Il successo di un contratto dipende quindi da:
+- Le **Competenze Tecniche** e **Legislative** dei suoi **Estensori**
+- Le **Competenze Tecniche** e **Manageriali** del **Personale Preposto**
+
+## Organi Preposti al Governo del Contratto
+
+Sopragruppi:
+- **Comitato Guida** = Gruppo non tecnico, tendenzialmente di manager, che si occupa di gestire le eventuali situazioni critiche imponendosi nella scala gerarchica di un progetto (Risolvono Problemi non tecnici)
+- **Direzione dei Lavori** = Gestiscono il Progetto durante la sua realizzazione
+
+Sottogruppi Specializzati:
+- **Monitoraggio** = Ispettori che verificano la **Qualità dello Sviluppo** andando a monitorarlo nel suo itinere. (Tempi e Modi)
+- **Collaudo** e **Certificazioni di Qualità** = Verificano la **Correttezza** del **Prodotto** e delle sue **Funzionalità**.
+
+## Fasi della realizzazione di un Contratto
+
+- **Impostazione** = Stesura Iniziale del Contratto
+- **Negoziazione** = Contrattazione sui dettagli effettivi del Contratto, nel pubblico Gare di Appalto
+- **Stipula** = Firma del Contratto -> Il suo effettivo inizio
+- **Attuazione** = Implementazione effettiva
+
+## Soggetti Coinvolti nella Stesura
+
+Elementi Principali nella realizzazione di un **Contratto** per **Committente** e **Fornitore** sono speculari e sono:
+- Settore Direzionale
+- Settore Economico
+- Settore Legale
+- Settore IT
+- Componente Funzionale = Gli utenti finali del prodotto
+
+## Struttura del Contratto
+
+- **Parte Normativa**
+  - Rapporti Istituzionali e Legali
+  - Corpo del Contratto
+- **Parte Operativa**
+  - Elementi tecnici espressi in maniera sommaria
+  - **Capitolato Tecnico** = Scritto dal Clienete, contiene le Richieste
+  - **Offerta** = Scritta dal Fornitore in risposta al Capitolato
+
+In caso di **Gara d'Appalto**, **Corpo** e **Capitolato** fanno parte della **Documentazione predisposta dal Committente**, mentre l'**Offerta** è la "risposta" del **Fornitore**.
+
+### Corpo del Contratto
+
+Definisce e correla:
+- **Aspetti Tecnici** e definizione dei **Beni e Servizi oggetto del Contratto**
+- **Modalità**, **Tempi** e **Condizioni**
+- **Relazioni** fra **Cliente** e **Fornitore**
+- **Corrispettivi**, ovvero i **Pagamenti**
+
+### Capitolato tecnico
+
+- **Predisposto dal Cliente**, insieme al **Bando** in caso di **Gara**
+- Fornisce al fornitore le **Informazioni di Dettaglio** per preparare l’**Offerta**
+- **Allegato Tecnico al Corpo del Contratto**
+
+### Offerta tecnica
+
+- Redatta dal **Fornitore** in base alla **Richiesta dal Cliente** nel **Capitolato Tecnico**, nl pubblico corrisponde ai criteri di valutazione indicati nel bando di gara e/o nella lettera di invito
+- Lo scopo è di dimostrare al **Cliente** la **Capacità del Fornitore di Soddisfare la Richiesta**
+- Possibili allegati (Documenti Tecnici):
+  - **Piano di Progetto**
+  - **Piano della Qualità** (Documento di Ingegneria del Software)
+
+### Piano di Qualità
+
+Spiega “CHI” fa “COSA”, “COME” la fa, e “QUANDO”.
+
+Descrive un **Servizio** in termini di:
+- **Struttura Organizzativa**
+- **Responsabilità** e **Risorse**
+- **Procedure** e **Procedimenti**
+
+Assicura quindi la **Qualità del Servizio** e **cerca di Garantire** sia il **Fornitore** che lo usa che il **Cliente** che fruisce dei servizi.
+
+### Parte Generale e parte Speciale
+
+Tendenzialmente si suddividono i **Contratti** in due macroparti:
+- **Generale** = Comune a tutti i **Contratti**, contiene gli **Aspetti Standard**
+  - **Modalità di Esecuzione**
+  - **Rispetto delle Normative**
+  - **Obblighi di Riservatezza**,
+- **Speciale** = Dipende dal **Contesto** e contiene gli **Aspetti Peculiari**
+
+### Produttività e Risorse
+
+**Produttività** espressa in **Punti Funzione** per **Giorno Uomo**.
+
+### Collaudo
+
+Verifica dell’esatto e completo adempimento da parte del fornitore di
+quanto oggetto del contratto.
+
+Esito del collaudo negativo possibile prevedere penali.
+
+### Penali
+
+Il **Contratto** può definire **Penalità Pecuniarie** da applicare in caso di inadempimento.
+
+Non hanno lo scopo di far risparmiare il committente, ma servono primariamente a rafforzare l'**Impegno del Fornitore** a rispettare i **Livelli di Servizio** definiti da contratto.
+
+### Definizione del Corrispettivo
+
+Il **Pagamento Corrisposto** dal **Committente** al **Fornitore**
+
+Può essere:
+- **A Corpo**
+  - Prezzo Fisso
+  - Più diffuso
+  - Definisco un importo per una prestazione e quello è
+  - Il rischio prinicipale è da parte del fornitore
+  - Soluzione che "Tranquillizza" il cliente, non deve effeettuare valutazioni sul prodotto ma solo sul prezzo di acquisto
+  - Minore flessibilità
+- **A Misura**:
+  - Fornisco i costi relativi alle **Attività** o alle **Risorse**
+  - Può esporre il cliente ed il fornitore a rischi nel caso di incertezza, non sa definire il costo finale dell'opera
+  - Trasparenza, "paga solo per ciò che è stato fatto".
+  - Due metriche di valutazione:
+    - **Prodotto Fornito** = In base a cosa viene effettuato
+    - **Risorse Utilizzate** = Function Point, Giorni Uomo
+
+Non esiste una scelta generalmente buona, l'indice di scelta tra una o l'altra soluzione è quanto siamo sicuri della **Complessità del Progetto** (AKA della nostra analisi dei rischi).
+
+Contratto a corpo non tutela il cliente, in caso di tempistiche insufficenti può diminuire la qualità

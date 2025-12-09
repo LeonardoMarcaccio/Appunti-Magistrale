@@ -29,7 +29,7 @@ assembly: instruction* EOF {
 instruction:
         PUSH n = INTEGER {
             code[i++] = PUSH;
-            code[i++] = Integer.parseInt($n.text)
+            code[i++] = Integer.parseInt($n.text);
         } //push INTEGER on the stack
 	  | PUSH l = LABEL {
 	        code[i++] = PUSH;
@@ -50,10 +50,14 @@ instruction:
 	  | DIV	{
             code[i++] = DIV;
         } //pop the two values v1 and v2 (respectively) and push v2/v1
-	  | STOREW	///pop two values: 
-	  		//  the second one is written at the memory address pointed by the first one
-	  | LOADW       ///read the content of the memory cell pointed by the top of the stack
-	                //  and replace the top of the stack with such value
+	  | STOREW {
+            code[i++] = STOREW;
+        } ///pop two values:
+	  	  //  the second one is written at the memory address pointed by the first one
+	  | LOADW {
+            code[i++] = LOADW;
+        } ///read the content of the memory cell pointed by the top of the stack
+	      //  and replace the top of the stack with such value
 	  | l = LABEL COL {
             labelDef.put($l.text, i);
         } //LABEL points at the location of the subsequent instruction
@@ -69,21 +73,37 @@ instruction:
 	        code[i++] = BRANCHLESSEQ;
             labelRef.put(i++, $l.text);
         } //pop two values and jump if the second one is less or equal to the first one
-	  | JS                ///pop one value from the stack:
-	  		      //  copy the instruction pointer in the RA register and jump to the popped value    
-	  | LOADRA      ///push in the stack the content of the RA register   
-	  | STORERA     ///pop the top of the stack and copy it in the RA register     
+	  | JS {
+	        code[i++] = JS;
+	   } ///pop one value from the stack:
+	  	 //  copy the instruction pointer in the RA register and jump to the popped value
+	  | LOADRA {
+            code[i++] = LOADRA;
+        } ///push in the stack the content of the RA register
+	  | STORERA {
+            code[i++] = STORERA;
+        } ///pop the top of the stack and copy it in the RA register
 	  | LOADTM {
             code[i++] = LOADTM;
         } //push in the stack the content of the TM register
 	  | STORETM {
             code[i++] = STORETM;
         } //pop the top of the stack and copy it in the TM register
-	  | LOADFP      ///push in the stack the content of the FP register   
-	  | STOREFP     ///pop the top of the stack and copy it in the FP register    
-	  | COPYFP      ///copy in the FP register the currest stack pointer    
-	  | LOADHP      ///push in the stack the content of the HP register    
-	  | STOREHP     ///pop the top of the stack and copy it in the HP register    
+	  | LOADFP {
+            code[i++] = LOADFP;
+        } ///push in the stack the content of the FP register
+	  | STOREFP {
+            code[i++] = STOREFP;
+        } ///pop the top of the stack and copy it in the FP register
+	  | COPYFP {
+            code[i++] = COPYFP;
+        } ///copy in the FP register the currest stack pointer
+	  | LOADHP {
+            code[i++] = LOADHP;
+        } ///push in the stack the content of the HP register
+	  | STOREHP {
+            code[i++] = STOREHP;
+        } ///pop the top of the stack and copy it in the HP register
 	  | PRINT {
             code[i++] = PRINT;
         } //visualize the top of the stack without removing it
