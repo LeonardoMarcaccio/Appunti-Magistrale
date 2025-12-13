@@ -1125,9 +1125,6 @@ Le necessità che portano alla realizzazone un **Software Applicativo** sono:
 - Supporto non sempre disponibile
 - Instabilità di mercato e potenziale mancanza di una evoluzione del sistema nel tempo
 
-
-
-
 # Contratti
 
 ## Contratto d'Appalto Art. 1655 C.C.
