@@ -1264,3 +1264,87 @@ Può essere:
 Non esiste una scelta generalmente buona, l'indice di scelta tra una o l'altra soluzione è quanto siamo sicuri della **Complessità del Progetto** (AKA della nostra analisi dei rischi).
 
 Contratto a corpo non tutela il cliente, in caso di tempistiche insufficenti può diminuire la qualità
+
+---
+
+# Data Science
+
+Con il termine **Data Science** si intende un'attività di **Estrazione dell'Informazione dai Dati**, ed è un'evoluzione dell'attività di **Buisness Intelligence**.
+
+Questo perchè:
+- Permette di lavorare su **Dati Non-Strutturati**
+- Ha un processo di **Estrazione dell'Informazione** più **Flessibile** e **Agile**
+- Usata in contesti di **Big Data**
+
+La figura del **Data Scientist** è quindi quella di un'esperto di tale area, capace di trasformare **Informazioni Nascoste** nei dati in **Vantaggi Competitivi**.
+
+I fattori che ne hanno favorito la diffusione sono:
+- **Disponibilità di Grandi Quantità di Dati**, per vari fattori tra cui la nascita di Internet, dei social e l’emergere di sistemi IoT
+- **Disponibilità di Maggior Potenza Computazionale**
+- **Necessità degli Utenti di Informazioni**
+
+# Big Data
+
+Non esiste un unica definizione di Big Data ma le più diffuse sono:
+- **Multiple V's**
+- **McKinsey**
+
+## Multiple V's
+
+I **Big Data** sono **Dataset** con particolari caratteristiche di:
+- **Volume**, grandi quantità in TB o PB.
+- **Velocità**, vengono generate grandi quantità di nuovi dati in brevi tempo.
+- **Varietà**, dati molto eterogenei
+  - **Dati Strutturati** (JSON)
+  - **Datio Semistrutturati** (XML)
+  - **Dati Non-Strutturati** (TXT)
+- **Veracità**, la qualità dei dati è molto eterogenea e spesso sono schema-less.
+
+## McKinsey
+
+Sono **Dataset** le cui **Dimensioni** vanno **oltre la Capacità**, dei tipici strumenti software di database, di **Acquisire**, **Archiviare**, **Gestire** e **Analizzare**.
+
+## Data Lake e Data Platforms
+
+I **Data Lake** erano inizialmente semplici archivi di dati, ma senza strumenti di gestione rischiano di diventare **Data Swamp**.
+
+Con il passare del tempo il concetto si è **Evoluto**, fino ad arrivare al concetto moderno di **Piattaforme Dati**.
+
+Le **Piattaforme Cloud Moderne** offrono strumenti per **Raccogliere**, **Trasformare** e **Analizzare i Dati**, riducendo la **Complessità Tecnica** e permettendo alle aziende di concentrarsi sugli **Obiettivi di Business**.
+
+## Tool per la gestione delle Piattaforme Dati
+
+- **Apache Hadoop**:
+  - **Framework** che permette di elaborare **Grandi Quantità di Dati** in modo **distribuito** su **Cluster di Computer**.
+  - Invece che affidarsi all’hardware per garantire affidabilità, **Gestisce Automaticamente i Guasti a Livello Software**, assicurando così un servizio affidabile anche in caso di fallimento delle macchine
+- **Architettura SMP** o **Symmetric Multi Processing**:
+  - Approccio più tradizionale, in cui **più Processori** condividono la **stessa Memoria RAM**, lo **stesso bus I/O** e lo **stesso Sistema di Dischi**.
+  - I limiti di questa architettura sono:
+    - **Il numero fisico di componenti installabili**
+    - **Bottleneck del Bus**
+- **Architettura MPP** o **Massively Parallel Processing**:
+  - L’**Architettura MPP** utilizza più **Processori in Parallelo**, ognuno con la propria RAM e i propri dischi, che collaborano per risolvere un problema dividendolo in più compiti indipendenti.
+  - Detta anche **Shared Nothing Architecture**.
+
+### Hadoop vs MPP
+
+Sia **Hadoop** sia **MPP** distribuiscono l’elaborazione dei dati su più nodi che lavorano in parallelo e combinano i risultati finali.
+
+Tuttavia, ci sono differenze importanti:
+- I **Sistemi MPP** utilizzano **Hardware Avanzato** e **Software Proprietario**, mentre **Hadoop** si basa su **Hardware Standard** e **Software Open Source**.
+- **Hadoop** è controllato principalmente tramite **Codice Imperativo**, mentre i **Sistemi MPP** usano **Query Dichiarative**.
+
+## Scalabilità
+
+La scalabilità è la capacità di un sistema di gestire un carico di lavoro crescente o di espandersi per supportare tale crescita.
+
+Esistono due principali tipi di scalabilità:
+- **Scalabilità Orizzontale**:
+  - Consiste nell’aggiungere nuovi nodi al sistema.
+- **Scalabilità Verticale**:
+  - Consiste nell’aumentare le risorse di un singolo nodo, come CPU o memoria.
+  - La scalabilità verticale è limitata dai vincoli fisici dell’hardware e dell’architettura.
+
+Oggi, grazie all’uso di hardware economico e a reti efficienti, la **Scalabilità Orizzontale è spesso più Conveniente** ed efficace rispetto a quella verticale.
+
+
