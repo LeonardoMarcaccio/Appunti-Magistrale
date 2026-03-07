@@ -283,3 +283,52 @@ They create a **market for vulnerabilities**, which can influence cybersecurity 
 Responsible brokers can **help organizations patch vulnerabilities quickly**.
 
 Irresponsible brokers can **increase the risk of cyberattacks** if flaws are sold to malicious actors.
+
+---
+
+# Cyber Security Principles
+
+## Complexity of Systems
+
+<center><b><i>More Complexity → Less Security</i></b></center>
+
+Increasing the complexity of a systems leads to an insecure system.
+Linear increase of complexity means super-linear increase of insecurity.
+
+<center><b><i>Remember KISS</i></b></center>
+
+## Entities composing a System
+
+Generally, **Systems** are composed of 3 types of **Entities**:
+- **Software**
+- **Hardware**
+- **Humanware**
+
+### SOFTWARE
+
+It is a **critical part of the system with a large exposed attack surface**.
+
+- **Large**:
+  - Many, very complex programs
+  - Each program made of thousands or millions of lines of source code
+- **Exposed**:
+  - That can be accessed remotely
+  - A system that isn't airgapped
+- **Attack Surface**:
+  ***Everything*** that can be used by an attacker to violate the system
+
+Remember that often other parts of the system are “easier to
+attack”
+
+### Hardware
+
+All the **Modern Hardware** is composed of **Hardware** and **Software**, that is called **Firmware**, this means that an attacker can modify the hardware or act on the software.
+
+Even the physical security of systems and devices (e.g. to deny
+unauthorized access) is hard to guarantee.
+
+### Humanware
+
+The “human in the loop” is often the weakest link in the system.
+
+**Social Engineering** : The use of deception to manipulate individuals into divulging confidential or personal information that may be used for fraudulent purposes

@@ -183,4 +183,57 @@ L'**Associatività** stabilisce la **Direzione** in cui un operatore deve essere
 
 # Parsing Bottom-Up
 
-l
+Il **Bottom-Up Parsing** è una strategia di **Analisi Sintattica** che costruisce l'albero di analisi partendo dalle foglie, i **Token dell'Input**, verso la radice, il **Simbolo Iniziale della Grammatica**.
+
+## Chaotic Bottom-Up Parser
+
+L'algoritmo segue questi **passaggi in modo non strutturato**:
+- **Osservazione**:
+  Si guarda l'intera **Stringa di Input** $s$, potendo analizzare qualsiasi punto della stessa.
+- **Ricerca**:
+  Si cerca all'interno della stringa una **sottostringa** $r$ che corrisponda alla **Parte Destra di una Produzione della Grammatica**.
+- **Riduzione**:
+  Si riduce la **sottostringa** trovata sostituendola con il suo **non-terminale** $N$.
+- **Verifica**:
+  Se l'intera **stringa** è stata ridotta al **simbolo iniziale della grammatica**, l'analisi è completata con successo e si è ottenuto il parse tree, altrimenti si ricomincia dal punto 1.
+
+### Il Problema della "Fortuna"
+
+Il limite principale di questo approccio è che **non garantisce il Successo anche se la Stringa è Corretta**, infatti il risultato dipende interamente dalla "fortuna" nel **scegliere la sequenza corretta di riduzioni**.
+
+## Non-Deterministic Chaotic Parser
+
+Per superare il problema della scelta, l'algoritmo viene reso non-deterministico:
+- Invece di scegliere una riduzione, il parser individua tutte le riduzioni possibili in quel momento.
+- Crea una copia di se stesso (un'istanza) per ogni possibile riduzione applicabile.
+- L'analisi ha successo se almeno un'istanza riesce a ridurre la stringa al simbolo iniziale.
+
+### Problematiche del Non-Deterministic Chaotic Parser
+
+- **Esplosione di Complessità a livello Esponenziale**
+- Più istanze possono realizzare il giusto parse tree, sprecando risorse.
+
+## Non-Deterministic LR Parser
+
+Il **Non-Deterministic LR Parser** è un'evoluzione del modello di parsing "caotico" che introduce **regole rigide** per limitare l'esplosione delle istanze e rendere l'analisi più strutturata.
+
+### Regole di Restrizione
+
+Per funzionare, questo parser impone due limitazioni fondamentali:
+- **Divisione dell'input**:
+  L'input viene diviso in due parti:
+    - **Parte Destra** non ancora esaminata
+    - **Parte Sinistra** che è già stata processata dal parser.
+- **Riduzioni Localizzate**:
+  Le **Riduzioni** sono permesse solo sulla parte adiacente destra alla divisione.
+  Questo significa che la **Parte Sinistra** della stringa può essere gestita efficientemente tramite uno **stack**, dove le riduzioni avvengono esclusivamente sulla **cima** dello stesso.
+
+### Azioni del Parser
+
+Il parser opera scegliendo in modo non deterministico tra due azioni principali:
+- **Shift**:
+  Sposta il punto di divisione verso destra, muovendo un nuovo token dall'input sulla cima dello stack. Questa azione può potenzialmente abilitare nuove riduzioni.
+- **Reduce**:
+  Sostituisce una sequenza di simboli sulla cima dello stack con il corrispondente simbolo non terminale, proprio come avviene nel parser caotico ma con il vincolo della posizione.
+
+
