@@ -236,4 +236,127 @@ Il parser opera scegliendo in modo non deterministico tra due azioni principali:
 - **Reduce**:
   Sostituisce una sequenza di simboli sulla cima dello stack con il corrispondente simbolo non terminale, proprio come avviene nel parser caotico ma con il vincolo della posizione.
 
+## SLR
 
+**SLR** (o **Simple LR**) è una versione semplificata del **Parsing LR** regolata da una **Tabella di Parsing** e che utilizza **Informazioni di Lookahead** per decidere in modo **deterministico** tra le azioni di ***Shift*** e ***Reduce***.
+
+### Struttura
+
+1. L'**Automa SLR** (DFA):
+Il cuore dell'algoritmo è un automa a stati finiti deterministico (DFA) chiamato automa SLR.
+Questo automa:
+  - Indica quali sono le configurazioni dello stack corrette.
+  - Detta quando eseguire le azioni di shift e reduce.
+  - Viene costruito utilizzando i cosiddetti SLR Items.
+2. **SLR Items** e **Operazione di Chiusura**
+Un **SLR Item** è una **Produzione Grammaticale** con un punto (∙) in una posizione specifica della parte destra, nella forma **$X→α∙β$**.
+Il **punto** indica quanto della produzione è **già stato analizzato e si trova in cima allo Stack**.
+L'operazione di **Closure** viene usata per estendere il contesto di uno stato **aggiungendo tutte le possibili produzioni che potrebbero seguire il punto**.
+3. Azioni del Parser
+Basandosi sullo stato corrente del DFA e sul token di input, il parser SLR decide tra quattro azioni:
+  - **Shift**:
+  Se c'è una **transizione uscente su un terminale**, il token viene spostato **dall'input allo stack** e **il parser cambia stato**.
+  - **Reduce**:
+  Se il punto è alla fine di una regola (**$X→α∙$**), il parser **sostituisce la sequenza** **$α$** in cima allo stack **con il non-terminale** **$X$**.
+  - **Goto**:
+  **Transizioni basate su variabili non-terminali** che avvengono dopo una riduzione.
+  - **Accept**:
+  L'**input viene accettato** quando viene **ridotta la produzione iniziale speciale** (**$E^′→E$**).
+
+### Risoluzione dei Conflitti con il Lookahead
+
+La caratteristica "Simple" di SLR risiede nel modo in cui **gestisce i Conflitti**, ovvero situazioni in cui l'automa permetterebbe sia uno shift che una riduzione.
+
+Un **Parser SLR(1)** esegue una riduzione **$X→α$** solo se il **Token corrente nell'Input**, ovvero il **Lookahead** appartiene all'insieme dei **Follow della Variabile** (Follow($X$)).
+
+L'insieme **Follow($X$)** contiene tutti i **terminali che possono apparire immediatamente dopo** **$X$** **in una Derivazione Valida**.
+
+Se ogni cella della tabella di parsing risultante contiene al massimo un'azione, la grammatica è definita **SLR(1)**.
+
+### Rappresentazione Tabellare
+
+Per efficienza, il DFA viene solitamente implementato come una tabella 2D dove le **righe** sono gli **Stati** e le **colonne** sono divise in **Terminali** (**Tabella delle Azioni**) e **Non-Terminali** (**Tabella Goto**).
+
+---
+
+# Analisi Semantica
+
+L'**Analisi Semantica** è l'ultima fase del front-end di un compilatore ed ha il compito di **individuare tutti gli errori che non possono essere rilevati dall'Analisi Lessicale o Sintattica**.
+
+## Tipici Errori Semantici
+
+I **tipici Errori Semantici** riscontrati nei programmi includono:
+- **Dichiarazioni Multiple**:
+  Si verifica quando una **Variabile** viene **dichiarata più di una volta all'interno dello stesso Scope**.
+  I linguaggi di programmazione impongono solitamente che **ogni Nome sia Univoco nel proprio Contesto**.
+- **Variabili non dichiarate**:
+  Questo errore avviene quando il codice tenta di **utilizzare una Variabile che non è stata ancora Definita**.
+  Mentre alcuni elementi (come i nomi dei metodi in Java) possono apparire prima della loro definizione, **le Variabili devono solitamente essere Dichiarate prima del loro Utilizzo**.
+- **Incompatibilità di tipo** (**Type mismatch**):
+  È uno degli errori più comuni e si manifesta quando **il Tipo di un'Espressione non corrisponde a quello richiesto dal Contesto**. Un esempio classico è l'assegnamento in cui il tipo della parte sinistra non coincide con quello della parte destra.
+- **Numero o Tipo Errato di Argomenti**:
+  Avviene quando un metodo o una funzione viene chiamata passando un numero di parametri diverso da quello previsto, oppure quando i tipi degli argomenti passati non corrispondono alla firma del metodo.
+
+## Simple Semantic Analyzer
+
+Il **Sistema di Analisi Semantica** utilizza solitamente un **Analizzatore** che opera in due fasi principali visitando l'**Abstract Syntax Tree (AST) creato dal parser**:
+
+1. **Generazione dell'AST Arricchito** (Top-down)
+Questa fase viene eseguita con una visita dall'alto verso il basso per ogni **Scope** del programma.
+Gli obiettivi principali sono:
+  - **Elaborazione delle Dichiarazioni**:
+  Per ogni **Dichiarazione di Variabile o Metodo**, l'analizzatore aggiunge una nuova voce nella **Symbol Table** e viene **Segnalato ogni Errore Semantico di Dichiarazione Multipla**.
+  - **Elaborazione delle Istruzioni**:
+  L'analizzatore **Identifica gli Usi delle Variabili** e **Verifica che non siano Variabili Non Dichiarate**.
+  - **Arricchimento dell'AST**:
+  nei **nodi "ID"** dell'albero, che **rappresentano l'Uso di un Identificatore**, viene aggiunto un **Puntatore alla Voce Corrispondente nella Symbol Table**.
+  Una volta collegati tutti gli usi alle rispettive dichiarazioni, i nomi testuali possono essere "dimenticati" poiché le informazioni necessarie sono ora contenute nei puntatori alle voci della tabella.
+
+2. Seconda Fase: Type Checking (Bottom-up)
+Una volta arricchito l'albero, l'analizzatore esegue una seconda visita, questa volta dal basso verso l'alto.
+- **Determinazione dei Tipi**:
+Utilizzando le informazioni precedentemente provenienti dalla **Symbol Table**, l'analizzatore **determina il Tipo di ogni singola Espressione**.
+- **Verifica degli Errori di Tipo**:
+L'analizzatore controlla che **le Operazioni siano valide per i Tipi Coinvolti**.
+
+## Symbol Table
+
+La **Symbol Table** è una struttura dati fondamentale utilizzata dal compilatore per tenere traccia di tutti i nomi dichiarati all'interno di un programma.
+
+Può essere vista come una **Mappa che associa ogni Nome a una voce specifica contenente le sue Caratteristiche**.
+
+I **Nomi** possono far riferimento a:
+- **Variabili**
+- **Classi**
+- **Campi**
+- **Metodi**
+
+### Syymbol Table Entry
+
+Per ogni **Identificatore** (o **Nome**), la tabella memorizza un insieme di attributi necessari per le fasi successive del compilatore:
+- **Natura del Nome**: se si tratta di una variabile, un campo, un metodo o una classe.
+- **Tipo**: ad esempio int, float, o la firma di un metodo (dominio e codominio).
+- **Livello di Annidamento** (Nesting level): fondamentale per gestire gli scope.
+- **Locazione di Memoria o Offset**: dove l'elemento sarà reperibile a runtime.
+
+### Scoping
+
+Il concetto di **Scoping** definisce l'**Insieme di Regole** che **determinano come l'uso di un nome all'interno di un programma venga associato alla sua corrispondente dichiarazione**.
+
+In sostanza, **le regole di scoping mappano ogni occorrenza di un identificatore alla definizione corretta**.
+
+Esistono due approcci principali per gestire la visibilità dei nomi:
+- **Scoping Statico** (o **Lessicale**):
+  - È il modello utilizzato da linguaggi come Java e C++, in cui **la Mappatura tra Uso e Dichiarazione avviene a Tempo di Compilazione**, si basa quindi sulla **Struttura Testuale del Codice**.
+  - **Regola del "Most Closely Nested"**:
+  <center>
+    L'uso di una <b>variabile <i>x</i></b> corrisponde alla <b>dichiarazione</b> di <b><i>x</i></b> nello <b>Scope</b>  più vicino che racchiude l'uso stesso.
+  
+    <b>Una dichiarazione in uno scope interno "nasconde" quella con lo stesso nome in uno scope esterno.</b>
+  </center>
+- **Scoping Dinamico**:
+  - Utilizzato da linguaggi come Lisp o APL, in cui la risoluzione dei nomi avviene a runtime.
+  - **Un riferimento a una variabile non locale corrisponde alla dichiarazione presente nella funzione chiamata più recentemente che è ancora attiva.**
+  - È generalmente considerato meno sicuro dello statico perché rende il codice difficile da comprendere e un singolo uso di variabile può corrispondere a dichiarazioni di tipo diverso a seconda del flusso di esecuzione.
+
+riguarda slide 12
