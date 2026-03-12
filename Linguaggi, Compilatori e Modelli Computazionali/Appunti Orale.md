@@ -359,4 +359,155 @@ Esistono due approcci principali per gestire la visibilità dei nomi:
   - **Un riferimento a una variabile non locale corrisponde alla dichiarazione presente nella funzione chiamata più recentemente che è ancora attiva.**
   - È generalmente considerato meno sicuro dello statico perché rende il codice difficile da comprendere e un singolo uso di variabile può corrispondere a dichiarazioni di tipo diverso a seconda del flusso di esecuzione.
 
-riguarda slide 12
+#### Livelli di Scope
+
+Ogni unzione ha uno o più **scope**:
+- uno per i **Parametri** e il **Corpo della Funzione**,
+- ed eventualmente **scope** aggiuntivi nella funzione, i **Blocchi Annidato**
+
+#### Note di Progettazione
+
+From now on, assume that our language:
+- uses static scoping
+- requires that all names be declared before they are used
+- does not allow multiple declarations of a name in the same scope
+  - e.g. no method overloading even for different kinds of names
+  - e.g. field and method with the same name not allowed
+- does allow the same name to be declared in multiple nested scopes but only once per scope
+
+In addition to the above simplification, assume that the symbol table will be used to answer
+two questions:
+1. Given a declaration of a name, is there already a declaration of the same name in the current scope 
+  i.e., is it multiply declared?
+2. Given a use of a name, to which declaration does it correspond (using the "most closely nested" rule), or is it undeclared?
+
+### Implementazioni delle Symbol Table
+
+#### Metodo della Lista di Hashtable
+
+In questo approccio, la **Tabella dei Simboli** è rappresentata come una **Lista di Hashtable**, dove ogni singola hashtable **contiene i nomi dichiarati in uno specifico scope attualmente visibile**.
+- **Struttura**:
+  La testa della lista contiene le dichiarazioni dello scope corrente, mentre gli elementi successivi contengono le dichiarazioni degli ambiti che lo racchiudono.
+- **Operazioni**:
+  - **Ingresso in uno scope**: Si incrementa il livello di annidamento e si aggiunge una nuova hashtable vuota in cima alla lista.
+  - **Dichiarazione**:
+    Si cerca il nome solo nella prima tabella della lista; se presente, si segnala un errore di dichiarazione multipla, altrimenti lo si inserisce.
+  - ****Uso di un Nome****:
+    Si ricerca il nome partendo dalla prima tabella e procedendo in quelle successive fino a trovarlo o a esaurire la lista (errore di variabile non dichiarata).
+  - **Uscita dallo Scope**:
+    Si rimuove la prima hashtable dalla lista e si decrementa il livello.
+- **Complessità Temporale**:
+  L'**Inserimento** è $O(1)$, ma la **Ricerca** di un uso ha un costo nel caso peggiore di $O(n)$, poiché potrebbero dover essere consultate tutte le tabelle della lista.
+
+#### Metodo della Hashtable di Liste
+
+In questo secondo approccio, esiste un'**unica grande hashtable** che contiene tutti i nomi dichiarati nello scope corrente o in quelli esterni.
+- **Struttura**:
+  A ogni **nome** nella hashtable è associata una **lista di voci** (**entry**); la voce in testa alla lista rappresenta la dichiarazione nello **scope più interno** (quello corrente), mentre le altre rappresentano le dichiarazioni negli **scope più esterni**.
+- **Operazioni**:
+  - **Ingresso in uno scope**:
+    Si incrementa semplicemente il numero del livello corrente (O(1)).
+  - **Dichiarazione**:
+    Si consulta la tabella, se la prima **entry** della lista associata al nome ha un livello uguale a quello corrente, è un **errore di dichiarazione multipla**, altrimenti, si aggiunge la nuova voce in testa alla lista di quel nome.
+  - **Uso di un Nome**:
+    Si accede alla hashtable e si utilizza direttamente la prima voce della lista associata al nome (O(1) atteso).
+  - **Uscita dallo Scope**:
+    Questa è l'operazione più onerosa: il compilatore deve scansionare tutti i nomi della hashtable e rimuovere la voce in testa a ogni lista se il suo livello corrisponde a quello corrente.
+- **Complessità Temporale**: Questo metodo è estremamente efficiente per la ricerca degli usi (O(1)), ma l'uscita dallo scope ha un costo proporzionale al numero totale di nomi presenti nella tabella.
+
+## Type Checking
+
+Il **Type Checking** è il processo che verifica se **un Programma rispetta il Sistema dei Tipi del Linguaggio di Programmazione**.
+Il suo obiettivo principale è garantire che le operazioni siano utilizzate con i tipi corretti, assicurando così l'interpretazione dei valori voluta dal programmatore.
+
+### Scopo e Utilità
+
+Il **Type Checking** permette di individuare diverse classi di errori prima o durante l'esecuzione del programma:
+- **Rilevazione di Bug**:
+  Impedisce operazioni prive di senso, come sommare un intero a un puntatore a funzione.
+- **Errori di Memoria**:
+  Aiuta a prevenire letture da puntatori non validi.
+- **Violazione dei Confini di Astrazione**:
+  Impedisce a un client di accedere a dati privati di un oggetto che dovrebbero essere nascosti.
+
+### Tipologie di Linguaggi
+
+I **linguaggi** si dividono in tre categorie in base a quando e come controllano i tipi:
+- **Statiamente Tipizzati**:
+  Quasi tutti i controlli avvengono durante la compilazione. Questo permette di catturare gli errori precocemente ed evita il rallentamento dovuto ai controlli a runtime.
+- **Dinamicamente tipizzati**:
+  I controlli avvengono durante l'esecuzione. Questo approccio è più flessibile (evita cast espliciti) e favorisce la prototipazione rapida, ma è potenzialmente meno sicuro.
+- **Non Tipizzati** (Linguaggio macchina):
+  Non viene eseguito alcun controllo dei tipi.
+
+#### Statico VS Dinamico
+
+- **Typing Statico**:
+  Nel typing statico, il controllo dei tipi avviene quasi interamente durante la fase di compilazione (come in C o Java).
+  - **Pro**:
+    - **Rilevazione precoce degli Errori**:
+      Permette di catturare molti bug di programmazione prima ancora che il programma venga eseguito.
+    - **Efficienza a Runtime**:
+      Evita il **sovraccarico** (**overhead**) derivante dai controlli di tipo durante l'esecuzione, poiché la correttezza è stata verificata in precedenza dal compilatore.
+    - **Formalizzazione**:
+      Fornisce una struttura logica concisa per le **Regole di Controllo Semantico del Linguaggio**.
+  - **Contro**:
+    - **Restrittività**:
+      I sistemi di tipi statici possono essere **rigidi**.
+      Ad esempio, se una variabile è dichiarata come double, il sistema potrebbe impedire di assegnarla a un int anche se il valore contenuto fosse effettivamente un intero a runtime.
+    - **Rifiuto di Programmi Corretti**:
+      Il costo del typing statico è che alcuni **programmi logicamente corretti potrebbero essere disallowed** (rifiutati) perché il compilatore non è in grado di dimostrarne la sicurezza secondo le sue regole.
+    - **Uso dei *Cast***:
+      Per superare le limitazioni del sistema, i programmatori finiscono spesso per utilizzare i cast, "scappando" di fatto dal controllo rigoroso dei tipi.
+    - **Complessità**:
+      Per rendere un sistema statico più espressivo (e quindi meno restrittivo), è necessario aumentarne notevolmente la complessità tecnica.
+- **Typing Dinamico**:
+  Nel typing dinamico, i controlli di tipo vengono eseguiti durante l'esecuzione del programma (come in Scheme).
+  - **Pro**:
+    - **Flessibilità**:
+      Non vincola rigidamente le variabili a un tipo fisso a tempo di compilazione, permettendo una gestione più fluida dei dati.
+    - **Prototipazione Rapida**:
+      Grazie alla minore rigidità, è considerato più adatto per sviluppare velocemente prototipi di software.
+  - **Contro**:
+    - **Errori Tardivi**:
+      Gli errori di tipo vengono scoperti solo quando il codice viene effettivamente eseguito, il che può portare a **fallimenti imprevisti in produzione**.
+    - **Performance**:
+      L'esecuzione può essere rallentata dalla necessità di verificare i tipi per ogni operazione a runtime.
+
+### Type Inference
+
+L'**Inferenza dei Tipi** è il processo di **Determinazione Automatica del Tipo** di un'espressione o di una parte del programma.
+Spesso il **Type Checking include l'Inferenza**, per poter controllare se un'operazione è valida, il compilatore deve prima "inferire" i tipi dei suoi componenti.
+
+Utilizza **Regole di Inferenza Logica** per dedurre il tipo di un'**espressione complessa** a partire dai tipi delle sue **sotto-espressioni**.
+Ad esempio, una regola può stabilire che "se e1​ è di tipo Int ed e2​ è di tipo Int, allora l'espressione e1​+e2​ è di tipo Int".
+
+Per inferire il tipo delle **variabili**, il processo si appoggia all'**Ambiente dei Tipi**, che rappresenta formalmente le **informazioni memorizzate nella Symbol Table**.
+
+#### Esempio Regole di Inferenza
+
+(Ipotesi: Tipo /\ ... /\ Ipotesi: Tipo) => Conclusion
+
+#### Soundness
+
+Un **Type System** è definito **Sound** se garantisce che, **ogni volta che il Compilatore riesce a Inferire Staticamente che un'Espressione e ha un Tipo *T*, allora a Runtime quella stessa espressione valuterà effettivamente in un valore appartenente al tipo *T***.
+
+#### il problema degli ID
+
+Il problema dell'identificazione del tipo degli ID risiede nel fatto che una semplice regola logica di inferenza non possiede, di per sé, informazioni sufficienti per determinare il tipo di una variabile semplicemente osservandone l'uso.
+
+Per assegnare un tipo a una variabile, il compilatore ha bisogno di un'assunzione del tipo: "siamo nello scope di una dichiarazione di x con tipo T".
+
+### L'Ambiente dei Tipi (O)
+Per superare questa mancanza di informazioni, le regole di inferenza vengono arricchite introducendo l'**Ambiente dei Tipi** (O).
+
+Un **Type Enviroment** è una funzione che mappa gli **Identificatori** ai rispettivi **tipi**.
+
+Corrispondenza con la Symbol Table
+Nella pratica dell'implementazione di un compilatore, l'ambiente dei tipi O corrisponde esattamente alle informazioni memorizzate nella Symbol Table.
+
+    Fase Top-down: Durante la visita dell'Abstract Syntax Tree (AST), l'analizzatore semantico elabora le dichiarazioni e popola la Symbol Table.
+    Arricchimento dell'AST: Ogni nodo "ID" nell'albero viene collegato tramite un puntatore alla sua specifica voce nella Symbol Table.
+    Fase Bottom-up: Durante il type checking, il compilatore risale l'albero dalle foglie (gli ID ormai collegati ai loro tipi) verso la radice, calcolando i tipi delle espressioni composte.
+
+In sintesi, il problema dell'identificazione del tipo viene risolto trasformando l'AST in un AST arricchito, dove ogni uso di un identificatore non è più solo un nome testuale, ma un riferimento diretto alle informazioni di tipo salvate nella tabella dei simboli.
