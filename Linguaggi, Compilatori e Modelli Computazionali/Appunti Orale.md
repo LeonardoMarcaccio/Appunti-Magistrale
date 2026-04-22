@@ -492,22 +492,56 @@ Per inferire il tipo delle **variabili**, il processo si appoggia all'**Ambiente
 
 Un **Type System** è definito **Sound** se garantisce che, **ogni volta che il Compilatore riesce a Inferire Staticamente che un'Espressione e ha un Tipo *T*, allora a Runtime quella stessa espressione valuterà effettivamente in un valore appartenente al tipo *T***.
 
-#### il problema degli ID
+#### Il problema degli ID
 
 Il problema dell'identificazione del tipo degli ID risiede nel fatto che una semplice regola logica di inferenza non possiede, di per sé, informazioni sufficienti per determinare il tipo di una variabile semplicemente osservandone l'uso.
 
 Per assegnare un tipo a una variabile, il compilatore ha bisogno di un'assunzione del tipo: "siamo nello scope di una dichiarazione di x con tipo T".
 
 ### L'Ambiente dei Tipi (O)
-Per superare questa mancanza di informazioni, le regole di inferenza vengono arricchite introducendo l'**Ambiente dei Tipi** (O).
 
-Un **Type Enviroment** è una funzione che mappa gli **Identificatori** ai rispettivi **tipi**.
+Per sopperire a questa mancanza di informazioni, le regole di inferenza vengono arricchite introducendo l'**Ambiente dei Tipi**.
 
-Corrispondenza con la Symbol Table
-Nella pratica dell'implementazione di un compilatore, l'ambiente dei tipi O corrisponde esattamente alle informazioni memorizzate nella Symbol Table.
+- Un **Type Enviroment** è una funzione che mappa gli **Identificatori Liberi** con i rispettivi **Tipi** nell'**ambito corrente**
+- Il **Type enviroment** viene passato lungo l'**AST** dalla **radice** verso le **foglie**
+- I **Tipi** vengono calcolati lungo l'**AST** dalle **foglie** verso la **radice**
 
-    Fase Top-down: Durante la visita dell'Abstract Syntax Tree (AST), l'analizzatore semantico elabora le dichiarazioni e popola la Symbol Table.
-    Arricchimento dell'AST: Ogni nodo "ID" nell'albero viene collegato tramite un puntatore alla sua specifica voce nella Symbol Table.
-    Fase Bottom-up: Durante il type checking, il compilatore risale l'albero dalle foglie (gli ID ormai collegati ai loro tipi) verso la radice, calcolando i tipi delle espressioni composte.
+NOTA: nelle implementazioni del compilatore, la fase "verso il basso" genera una versione arricchita dell'AST in cui gli identificatori sono collegati alla loro voce nella tabella dei simboli.
 
-In sintesi, il problema dell'identificazione del tipo viene risolto trasformando l'AST in un AST arricchito, dove ogni uso di un identificatore non è più solo un nome testuale, ma un riferimento diretto alle informazioni di tipo salvate nella tabella dei simboli.
+### Il Subtyping
+
+Il **Subtyping** è una **relazione fondamentale tra tipi** che permette di definire quando un oggetto di un determinato tipo può essere utilizzato al posto di un altro.
+
+Il **Subtyping** viene formalizzato come una **relazione $X≤Y$ tra classi**, che indica che "**$X$ è un sottotipo di $Y$**" o che "**$X$ conforma a $Y$**".
+Questa relazione è caratterizzata da tre proprietà principali:
+- **Riflessività**: ogni classe è sottotipo di se stessa (X≤X).
+- **Ereditarietà**: se la classe X eredita dalla classe Y, allora X≤Y.
+- **Transitività**: se X≤Y e Y≤Z, allora X≤Z.
+
+#### Il Principio di Sostituzione di Liskov
+Il concetto pratico alla base del subtyping è il Principio di Sostituzione di Liskov:
+
+<center><b><i>
+Un oggetto di un sottotipo può essere utilizzato ovunque sia richiesto un oggetto del suo supertipo senza compromettere la correttezza del programma.
+</center></b></i>
+
+#### Soundness (Sicurezza) e Tipi Dinamici
+
+Il subtyping introduce una distinzione cruciale tra:
+- **Tipo statico**: Il tipo dichiarato dal programmatore a tempo di compilazione.
+- **Tipo dinamico**: Il tipo effettivo dell'oggetto creato a runtime (es. tramite new C).
+
+Il **Type System** è considerato **sound** se garantisce che il tipo dinamico di un'espressione **sia sempre un Sottotipo del suo Tipo Statico**, questa garanzia assicura che tutte le operazioni valide per il tipo statico siano supportate dall'oggetto reale a runtime.
+
+#### Overriding e Regole di Subtyping Avanzate
+
+Quando una **Sottoclasse** ridefinisce (override) **Campi** o **Metodi**, devono essere rispettate regole precise per mantenere il sistema **sound**:
+- **Campi**:
+  In generale, il **Subtyping dei Campi non è Sicuro** se questi possono essere **modificati**.
+  Se però sono **immutabili**, è ammessa la **covarianza**, il tipo del campo nella sottoclasse deve essere un sottotipo del campo nella superclasse.
+- **Metodi**:
+  Per le funzioni, la regola generale prevede:
+  - **Covarianza del Tipo di Ritorno**:
+    Il **Valore restituito** dal metodo della sottoclasse deve essere **un Sottotipo di quello della Superclasse**.
+  - **Controvarianza dei Parametri**:
+    I **Tipi dei Parametri** del metodo nella sottoclasse devono essere **Supertipi di quelli nella Superclasse**.
